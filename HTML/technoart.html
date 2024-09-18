@@ -2,15 +2,22 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Techno-Art Showdown</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
         @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
-
-
-        body {
+        
+        html, body {
+            width: 100%;
+            height: 100%;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal overflow */
+        }
+
+        body {
             background-color: #f0f0f0;
             color: #333;
         }
@@ -22,6 +29,7 @@
             font-style: normal;
             background-color: black;
             height: 100vh;
+            width: 100%;
             padding: 1em 0;
             position: relative;
             align-content: center;
