@@ -724,13 +724,10 @@
                 const x = ((this.x / this.z) * canvas.width) / 2 + canvas.width / 2;
                 const y = ((this.y / this.z) * canvas.height) / 2 + canvas.height / 2;
                 const radius = (1 - this.z / maxDepth) * this.size * 3;
-
                 ctx.beginPath();
-                ctx.arc(x, y, radius, 0, 2 * Math.PI);
+                ctx.arc(x, y, radius, 3, Math.PI * 2);
                 ctx.fillStyle = this.color;
                 ctx.fill();
-                ctx.strokeStyle = 'white'; // Add a white border around the stars
-                ctx.stroke();
             }
         }
 
@@ -750,8 +747,6 @@
 
         function updateAndDrawStars() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'black'; // Set the background color to black
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
             stars.forEach((star) => {
                 star.update();
                 star.draw();
@@ -764,11 +759,9 @@
             initStars();
         });
 
-        window.addEventListener("load", () => {
-            setCanvasSize();
-            initStars();
-            requestAnimationFrame(updateAndDrawStars);
-        });
+        setCanvasSize();
+        initStars();
+        requestAnimationFrame(updateAndDrawStars);
 
     </script>
 </body>
