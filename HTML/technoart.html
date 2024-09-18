@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno-Art Showdown</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;700;900&display=swap");
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        header {
+            font-family: "Orbitron", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            background-color: black;
+            height: 100vh;
+            padding: 1em 0;
+            position: relative;
+            align-content: center;
+            text-align: center;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            /* Canvas behind the cards */
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        .hero {
+            font-size: clamp(40px, 10vw, 100px);
+            line-height: 1;
+            display: inline-block;
+            color: #fff;
+            z-index: 2;
+            letter-spacing: 10px;
+
+            /* Bright things in dark environments usually cast that light, giving off a glow */
+            filter: drop-shadow(0 1px 3px);
+        }
+
+        .layers {
+            position: relative;
+        }
+
+        .layers::before,
+        .layers::after {
+            content: attr(data-text);
+            position: absolute;
+            width: 110%;
+            z-index: -1;
+        }
+
+        .layers::before {
+            top: 10px;
+            left: 15px;
+            color: #e0287d;
+        }
+
+        .layers::after {
+            top: 5px;
+            left: -10px;
+            color: #1bc7fb;
+        }
+
+        .glitch span {
+            animation: paths 5s step-end infinite;
+        }
+
+        .glitch::before {
+            animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+                font 8s step-end infinite, movement 10s step-end infinite;
+        }
+
+        .glitch::after {
+            animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+                font 7s step-end infinite, movement 8s step-end infinite;
+        }
+
+        .single-path {
+            clip-path: polygon(0% 12%,
+                    53% 12%,
+                    53% 26%,
+                    25% 26%,
+                    25% 86%,
+                    31% 86%,
+                    31% 0%,
+                    53% 0%,
+                    53% 84%,
+                    92% 84%,
+                    92% 82%,
+                    70% 82%,
+                    70% 29%,
+                    78% 29%,
+                    78% 65%,
+                    69% 65%,
+                    69% 66%,
+                    77% 66%,
+                    77% 45%,
+                    85% 45%,
+                    85% 26%,
+                    97% 26%,
+                    97% 28%,
+                    84% 28%,
+                    84% 34%,
+                    54% 34%,
+                    54% 89%,
+                    30% 89%,
+                    30% 58%,
+                    83% 58%,
+                    83% 5%,
+                    68% 5%,
+                    68% 36%,
+                    62% 36%,
+                    62% 1%,
+                    12% 1%,
+                    12% 34%,
+                    60% 34%,
+                    60% 57%,
+                    98% 57%,
+                    98% 83%,
+                    1% 83%,
+                    1% 53%,
+                    91% 53%,
+                    91% 84%,
+                    8% 84%,
+                    8% 83%,
+                    4% 83%);
+        }
+
+        .paths {
+            animation: paths 5s step-end infinite;
+        }
+
+        @keyframes paths {
+            0% {
+                clip-path: polygon(0% 43%,
+                        83% 43%,
+                        83% 22%,
+                        23% 22%,
+                        23% 24%,
+                        91% 24%,
+                        91% 26%,
+                        18% 26%,
+                        18% 83%,
+                        29% 83%,
+                        29% 17%,
+                        41% 17%,
+                        41% 39%,
+                        18% 39%,
+                        18% 82%,
+                        54% 82%,
+                        54% 88%,
+                        19% 88%,
+                        19% 4%,
+                        39% 4%,
+                        39% 14%,
+                        76% 14%,
+                        76% 52%,
+                        23% 52%,
+                        23% 35%,
+                        19% 35%,
+                        19% 8%,
+                        36% 8%,
+                        36% 31%,
+                        73% 31%,
+                        73% 16%,
+                        1% 16%,
+                        1% 56%,
+                        50% 56%,
+                        50% 8%);
+            }
+
+            5% {
+                clip-path: polygon(0% 29%,
+                        44% 29%,
+                        44% 83%,
+                        94% 83%,
+                        94% 56%,
+                        11% 56%,
+                        11% 64%,
+                        94% 64%,
+                        94% 70%,
+                        88% 70%,
+                        88% 32%,
+                        18% 32%,
+                        18% 96%,
+                        10% 96%,
+                        10% 62%,
+                        9% 62%,
+                        9% 84%,
+                        68% 84%,
+                        68% 50%,
+                        52% 50%,
+                        52% 55%,
+                        35% 55%,
+                        35% 87%,
+                        25% 87%,
+                        25% 39%,
+                        15% 39%,
+                        15% 88%,
+                        52% 88%);
+            }
+
+            30% {
+                clip-path: polygon(0% 53%,
+                        93% 53%,
+                        93% 62%,
+                        68% 62%,
+                        68% 37%,
+                        97% 37%,
+                        97% 89%,
+                        13% 89%,
+                        13% 45%,
+                        51% 45%,
+                        51% 88%,
+                        17% 88%,
+                        17% 54%,
+                        81% 54%,
+                        81% 75%,
+                        79% 75%,
+                        79% 76%,
+                        38% 76%,
+                        38% 28%,
+                        61% 28%,
+                        61% 12%,
+                        55% 12%,
+                        55% 62%,
+                        68% 62%,
+                        68% 51%,
+                        0% 51%,
+                        0% 92%,
+                        63% 92%,
+                        63% 4%,
+                        65% 4%);
+            }
+
+            45% {
+                clip-path: polygon(0% 33%,
+                        2% 33%,
+                        2% 69%,
+                        58% 69%,
+                        58% 94%,
+                        55% 94%,
+                        55% 25%,
+                        33% 25%,
+                        33% 85%,
+                        16% 85%,
+                        16% 19%,
+                        5% 19%,
+                        5% 20%,
+                        79% 20%,
+                        79% 96%,
+                        93% 96%,
+                        93% 50%,
+                        5% 50%,
+                        5% 74%,
+                        55% 74%,
+                        55% 57%,
+                        96% 57%,
+                        96% 59%,
+                        87% 59%,
+                        87% 65%,
+                        82% 65%,
+                        82% 39%,
+                        63% 39%,
+                        63% 92%,
+                        4% 92%,
+                        4% 36%,
+                        24% 36%,
+                        24% 70%,
+                        1% 70%,
+                        1% 43%,
+                        15% 43%,
+                        15% 28%,
+                        23% 28%,
+                        23% 71%,
+                        90% 71%,
+                        90% 86%,
+                        97% 86%,
+                        97% 1%,
+                        60% 1%,
+                        60% 67%,
+                        71% 67%,
+                        71% 91%,
+                        17% 91%,
+                        17% 14%,
+                        39% 14%,
+                        39% 30%,
+                        58% 30%,
+                        58% 11%,
+                        52% 11%,
+                        52% 83%,
+                        68% 83%);
+            }
+
+            76% {
+                clip-path: polygon(0% 26%,
+                        15% 26%,
+                        15% 73%,
+                        72% 73%,
+                        72% 70%,
+                        77% 70%,
+                        77% 75%,
+                        8% 75%,
+                        8% 42%,
+                        4% 42%,
+                        4% 61%,
+                        17% 61%,
+                        17% 12%,
+                        26% 12%,
+                        26% 63%,
+                        73% 63%,
+                        73% 43%,
+                        90% 43%,
+                        90% 67%,
+                        50% 67%,
+                        50% 41%,
+                        42% 41%,
+                        42% 46%,
+                        50% 46%,
+                        50% 84%,
+                        96% 84%,
+                        96% 78%,
+                        49% 78%,
+                        49% 25%,
+                        63% 25%,
+                        63% 14%);
+            }
+
+            90% {
+                clip-path: polygon(0% 41%,
+                        13% 41%,
+                        13% 6%,
+                        87% 6%,
+                        87% 93%,
+                        10% 93%,
+                        10% 13%,
+                        89% 13%,
+                        89% 6%,
+                        3% 6%,
+                        3% 8%,
+                        16% 8%,
+                        16% 79%,
+                        0% 79%,
+                        0% 99%,
+                        92% 99%,
+                        92% 90%,
+                        5% 90%,
+                        5% 60%,
+                        0% 60%,
+                        0% 48%,
+                        89% 48%,
+                        89% 13%,
+                        80% 13%,
+                        80% 43%,
+                        95% 43%,
+                        95% 19%,
+                        80% 19%,
+                        80% 85%,
+                        38% 85%,
+                        38% 62%);
+            }
+
+            1%,
+            7%,
+            33%,
+            47%,
+            78%,
+            93% {
+                clip-path: none;
+            }
+        }
+
+        .movement {
+            /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+            position: relative;
+            animation: movement 8s step-end infinite;
+        }
+
+        @keyframes movement {
+            0% {
+                top: 0px;
+                left: -20px;
+            }
+
+            15% {
+                top: 10px;
+                left: 10px;
+            }
+
+            60% {
+                top: 5px;
+                left: -10px;
+            }
+
+            75% {
+                top: -5px;
+                left: 20px;
+            }
+
+            100% {
+                top: 10px;
+                left: 5px;
+            }
+        }
+
+        .opacity {
+            animation: opacity 5s step-end infinite;
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0.1;
+            }
+
+            5% {
+                opacity: 0.7;
+            }
+
+            30% {
+                opacity: 0.4;
+            }
+
+            45% {
+                opacity: 0.6;
+            }
+
+            76% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            1%,
+            7%,
+            33%,
+            47%,
+            78%,
+            93% {
+                opacity: 0;
+            }
+        }
+
+        .font {
+            animation: font 7s step-end infinite;
+        }
+
+        @keyframes font {
+            0% {
+                font-weight: 100;
+                color: #e0287d;
+                filter: blur(3px);
+            }
+
+            20% {
+                font-weight: 500;
+                color: #fff;
+                filter: blur(0);
+            }
+
+            50% {
+                font-weight: 300;
+                color: #1bc7fb;
+                filter: blur(2px);
+            }
+
+            60% {
+                font-weight: 700;
+                color: #fff;
+                filter: blur(0);
+            }
+
+            90% {
+                font-weight: 500;
+                color: #e0287d;
+                filter: blur(6px);
+            }
+        }
+
+        main {
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: black;
+            flex-direction: row;
+            align-items: center;
+
+            .about {
+                margin: 8px;
+                padding: 8px;
+                width: 100%;
+                border-radius: 8px;
+                font-family: "Exo 2", sans-serif;
+                text-align: center;
+                border: white solid 3px;
+                color: white;
+
+                .sweet-title {
+                    order: 2;
+                    color: #fde9ff;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    font-size: clamp(3rem, 10vw, 6rem);
+                    line-height: 0.75em;
+                    text-align: center;
+                    text-shadow: 3px 1px 1px #4af7ff, 2px 2px 1px #165bfb, 4px 2px 1px #4af7ff,
+                        3px 3px 1px #165bfb, 5px 3px 1px #4af7ff, 4px 4px 1px #165bfb,
+                        6px 4px 1px #4af7ff, 5px 5px 1px #165bfb, 7px 5px 1px #4af7ff,
+                        6px 6px 1px #165bfb, 8px 6px 1px #4af7ff, 7px 7px 1px #165bfb,
+                        9px 7px 1px #4af7ff;
+
+                    span {
+                        display: block;
+                        position: relative;
+
+                        &:before {
+                            content: attr(data-text);
+                            position: absolute;
+                            text-shadow: 2px 2px 1px #e94aa1, -1px -1px 1px #c736f9,
+                                -2px 2px 1px #e94aa1, 1px -1px 1px #f736f9;
+                            z-index: 1;
+                        }
+
+                        &:nth-child(1) {
+                            padding-right: 2.25rem;
+                        }
+
+                        &:nth-child(2) {
+                            padding-left: 2.25rem;
+                        }
+                    }
+                }
+            }
+
+            .winners {
+                margin: 8px;
+                padding: 8px;
+                border-radius: 8px;
+                text-align: center;
+                width: 100%;
+                border: white solid 3px;
+
+                h1 {
+                    font-size: 70px;
+                    font-weight: 400;
+                    color: tomato;
+
+                    --x-offset: -0.0625em;
+                    --y-offset: 0.0625em;
+                    --stroke: 0.025em;
+                    --background-color: white;
+                    --stroke-color: lightblue;
+
+                    text-shadow:
+
+                        var(--x-offset) var(--y-offset) 0px var(--background-color),
+
+                        calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke)) 0px var(--stroke-color);
+
+                }
+
+                /* for browsers that support spread, added in
+                    https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+                    currently: none browsers! none of them!
+                    I can't even find a test: 
+                    https://wpt.fyi/results/css/css-text-decor */
+                @supports (text-shadow: 1px 1px 1px 1px black) {
+                    h1 {
+                        text-shadow:
+
+                            var(--x-offset) var(--y-offset) 0px 0px var(--background-color),
+
+                            var(--x-offset) var(--y-offset) var(--stroke) 0px var(--stroke-color);
+
+                    }
+                }
+
+                .gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    margin: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+}
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <canvas id="starfield"></canvas>
+        <div class="overlay"></div>
+        <div class="hero-container">
+            <h2 class="hero glitch layers" data-text="テクノアート"><span>Techno-Art</span></h2><br>
+            <h2 class="hero glitch layers" data-text="対決"><span>Showdown</span></h2>
+        </div>
+    </header>
+    <main>
+        <div class="about">
+            <h1 class="sweet-title">
+                <span data-text="About">About</span>
+            </h1><br>
+            <p style="color: white;">
+            <h2>🎨 Attention All Digital Artists! 🎨</h2><br><br>
+
+            Get ready to showcase your creativity with the IEEE Student Branch (ISSB) as we celebrate National Space Day
+            with an epic<br>TECHNO-ART SHOWDOWN - A Digital Art Competition! Whether you're a digital painting prodigy,
+            a 3D modeling maestro, or a graphic design genius—this is your moment to shine! 🌟<br><br>
+
+            Event Details:<br>
+
+            🛡 Registration Period: 15th August, 2024 to 17th August, 2024<br>
+            Secure your spot ASAP—don't miss out on this golden opportunity!<br>
+            FEE: 40rs only<br><br>
+
+            ⚡ Topic Reveal: 17th August, 2024<br>
+            Unleash your creativity as we reveal the theme!<br><br>
+
+            ⚔ Creative Challenge:<br>
+            17th August,2024 to 22nd August, 2024<br>
+            Dive into the challenge, push your limits, and earn those points!<br><br>
+
+            🎨 Submission Deadline: 22nd August, 2024<br>
+            Submit your masterpiece and prove your artistic prowess!<br><br>
+
+            🏆 Results Announcement: 23rd August,2024<br>
+            Find out if you’ve claimed the title of ultimate creative champion!<br>
+            The art work will be displayed too!!!<br><br>
+
+            This is more than just a competition; it's a battle of artistic brilliance. SE, TE, BE students, and digital
+            art enthusiasts—rise to the challenge and make your mark!<br><br>
+
+            Don’t just dream it—create it! 🌠
+
+            </p>
+        </div>
+        <div class="winners" hidden>
+            <h1>The Winners!</h1>
+            <div class="gallery">
+                <div class="gallery-item"><img src="image1.jpg" alt="Image 1"></div>
+                <div class="gallery-item"><img src="image2.jpg" alt="Image 2"></div>
+                <div class="gallery-item"><img src="image3.jpg" alt="Image 3"></div>
+                <div class="gallery-item"><img src="image4.jpg" alt="Image 4"></div>
+                <div class="gallery-item"><img src="image5.jpg" alt="Image 5"></div>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.querySelector('.gallery');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            gallery.addEventListener('mousedown', (e) => {
+                isDown = true;
+                gallery.classList.add('active');
+                startX = e.pageX - gallery.offsetLeft;
+                scrollLeft = gallery.scrollLeft;
+            });
+
+            gallery.addEventListener('mouseleave', () => {
+                isDown = false;
+                gallery.classList.remove('active');
+            });
+
+            gallery.addEventListener('mouseup', () => {
+                isDown = false;
+                gallery.classList.remove('active');
+            });
+
+            gallery.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - gallery.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                gallery.scrollLeft = scrollLeft - walk;
+            });
+        });
+
+
+
+
+        const overlay = document.querySelector('.overlay');
+
+
+        // Canvas animation code
+        const canvas = document.getElementById("starfield");
+        const ctx = canvas.getContext("2d");
+        const numStars = 3000;
+        const speed = 5;
+        const maxDepth = 1500;
+        const starColors = ["#FFFFFF", "#FFDDC1", "#FFC0CB", "#ADD8E6", "#B0E0E6"];
+        let stars = [];
+
+        function setCanvasSize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;// ... rest of your code
+
+            // Close full-panel when clicking on the canvas
+            canvas.addEventListener('click', () => {
+                fullPanel.classList.remove('active');
+                container.style.pointerEvents = 'auto';
+                // Re-enable clicks on cards
+            }); canvas.addEventListener('touchstart', () => {
+                fullPanel.classList.remove('active');
+                container.style.pointerEvents = 'auto'; // Re-enable clicks on cards
+            });
+        }
+
+        function getRandomColor() {
+            return starColors[Math.floor(Math.random() * starColors.length)];
+        }
+
+        class Star {
+            constructor(x, y, z, size, color) {
+                this.x = x;
+                this.y = y;
+                this.z = z;
+                this.size = size;
+                this.color = color;
+            }
+
+            update() {
+                this.z -= speed * (1.5 - this.z / maxDepth);
+                if (this.z <= 0) {
+                    this.reset();
+                }
+            }
+
+            reset() {
+                this.z = maxDepth;
+                const angle = Math.random() * 2 * Math.PI;
+                const distance = Math.sqrt(Math.random()) * (canvas.width / 2);
+                this.x = Math.cos(angle) * distance;
+                this.y = Math.sin(angle) * distance;
+                this.size = (1 - distance / (canvas.width / 2)) * 0.1 + 0.5;
+                this.color = getRandomColor();
+            }
+
+            draw() {
+                const x = ((this.x / this.z) * canvas.width) / 2 + canvas.width / 2;
+                const y = ((this.y / this.z) * canvas.height) / 2 + canvas.height / 2;
+                const radius = (1 - this.z / maxDepth) * this.size * 3;
+                ctx.beginPath();
+                ctx.arc(x, y, radius, 3, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initStars() {
+            stars = Array.from({ length: numStars }, () => {
+                const angle = Math.random() * 2 * Math.PI;
+                const distance = Math.sqrt(Math.random()) * (canvas.width / 2);
+                return new Star(
+                    Math.cos(angle) * distance,
+                    Math.sin(angle) * distance,
+                    Math.random() * maxDepth,
+                    (1 - distance / (canvas.width / 2)) * 0.1 + 0.5,
+                    getRandomColor()
+                );
+            });
+        }
+
+        function updateAndDrawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach((star) => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(updateAndDrawStars);
+        }
+
+        window.addEventListener("resize", () => {
+            setCanvasSize();
+            initStars();
+        });
+
+        setCanvasSize();
+        initStars();
+        requestAnimationFrame(updateAndDrawStars);
+
+    </script>
+</body>
+
+</html>
