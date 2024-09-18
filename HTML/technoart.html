@@ -684,18 +684,10 @@
         let stars = [];
 
         function setCanvasSize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;// ... rest of your code
-
-            // Close full-panel when clicking on the canvas
-            canvas.addEventListener('click', () => {
-                fullPanel.classList.remove('active');
-                container.style.pointerEvents = 'auto';
-                // Re-enable clicks on cards
-            }); canvas.addEventListener('touchstart', () => {
-                fullPanel.classList.remove('active');
-                container.style.pointerEvents = 'auto'; // Re-enable clicks on cards
-            });
+            if (canvas) {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
         }
 
         function getRandomColor() {
@@ -767,9 +759,11 @@
             initStars();
         });
 
-        setCanvasSize();
-        initStars();
-        requestAnimationFrame(updateAndDrawStars);
+        window.addEventListener("load", () => {
+            setCanvasSize();
+            initStars();
+            requestAnimationFrame(updateAndDrawStars);
+        });
 
     </script>
 </body>
