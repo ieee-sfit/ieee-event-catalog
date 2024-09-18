@@ -682,6 +682,9 @@
         </div>
     </main>
     <script>
+        document.addEventListener("contextmenu", function(event){
+            event.preventDefault();
+        });
         // Canvas animation code
         const canvas = document.getElementById("starfield");
         const ctx = canvas.getContext("2d");
