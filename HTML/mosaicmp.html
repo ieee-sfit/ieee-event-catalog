@@ -159,7 +159,7 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            background-image: url(https://wowsp-wows-na.wgcdn.co/dcont/fb/image/tmb/e2e12dd4-29aa-11e6-b5f8-d89d6715223c_1200x.jpg);
+            background-image: url(https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/Design%205.png?raw=true);
             background-attachment: fixed;
             background-size: cover;
             -moz-background-size: cover;
@@ -264,8 +264,6 @@
             background-color: rgba(50, 50, 70, 0.8);
             border-radius: 10px;
             overflow: hidden;
-            transform: translateX(0);
-            transition: transform 0.5s ease-in-out;
         }
 
         .agent-img {
@@ -304,7 +302,6 @@
             position: absolute;
             right: 0px;
             top: 0px;
-            font-size: 30px;
             text-align: left;
             background-color: rgba(0, 0, 0, 0.479);
             padding: 5px;
@@ -312,6 +309,7 @@
 
             p {
                 text-wrap: wrap;
+                font-size: 30px;
             }
         }
 
@@ -537,15 +535,16 @@
             let card = slides[currentSlide].querySelector('.card');
             let agentName = slides[currentSlide].querySelector('.agent-name');
 
-            card.style.transform = 'translateX(0)';
+            // Remove or comment out the following lines to prevent movement
+            // card.style.transform = 'translateX(0)';
             agentImg.style.transform = 'translateX(20px)';
             agentName.style.transform = 'translateX(10px)';
 
             setTimeout(() => {
-                card.style.transform = 'translateX(-10px)';
-                agentImg.style.transform = 'translateX(0)';
-                agentName.style.transform = 'translateX(-5px)';
-            }, 300);
+            //     card.style.transform = 'translateX(-10px)';
+                 agentImg.style.transform = 'translateX(0)';
+                 agentName.style.transform = 'translateX(-5px)';
+             }, 300);
         }
     </script>
 </body>

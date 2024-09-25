@@ -11,7 +11,7 @@
             box-sizing: border-box;
         }
 
-        .body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #1e1e2f;
             color: white;
@@ -46,7 +46,6 @@
           border-radius: 10px;
           overflow: hidden;
           transform: translateX(0);
-          transition: transform 0.5s ease-in-out;
       }
   
       .agent-img {
@@ -228,15 +227,16 @@
             let card = slides[currentSlide].querySelector('.card');
             let agentName = slides[currentSlide].querySelector('.agent-name');
 
-            card.style.transform = 'translateX(0)';
+            // Remove or comment out the following lines to prevent movement
+            // card.style.transform = 'translateX(0)';
             agentImg.style.transform = 'translateX(20px)';
             agentName.style.transform = 'translateX(10px)';
 
             setTimeout(() => {
-                card.style.transform = 'translateX(-10px)';
-                agentImg.style.transform = 'translateX(0)';
-                agentName.style.transform = 'translateX(-5px)';
-            }, 300);
+            //     card.style.transform = 'translateX(-10px)';
+                 agentImg.style.transform = 'translateX(0)';
+                 agentName.style.transform = 'translateX(-5px)';
+             }, 300);
         }
     </script>
 </body>
