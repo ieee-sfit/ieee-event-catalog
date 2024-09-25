@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .powerups {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #000;
+            .items {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                user-select: none;
+            }
+            
+            .items .item {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 300px;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: all 300ms ease-in-out;
+                z-index: -1;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #000;
+                border: limegreen solid 2px;
+                padding: 10px;
+            }
+            
+            .item img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .item.active {
+                opacity: 1;
+                z-index: 99;
+                box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+            }
+            
+            .item.prev {
+                z-index: 2;
+                opacity: 0.25;
+                transform: translate(-125%, -50%);
+            }
+            
+            .item.next {
+                z-index: 2;
+                opacity: 0.25;
+                transform: translate(25%, -50%);
+            }
+            
+            .items .button-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 275px;
+                z-index: 100;
+            }
+            
+            .button-container .button {
+                color: #fff;
+                font-size: 32px;
+                cursor: pointer;
+                position: relative;
+                opacity: 0.75;
+                transition: all 300ms ease-in-out;
+            }
+            
+            .button-container .button:hover {
+                opacity: 1;
+            }
+            
+            .button-container .button:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50px;
+                height: 50px;
+                background-color: rgba(0, 0, 0, 1);
+                border-radius: 50%;
+                z-index: -99;
+            }
+            
+            .button-container .button:nth-child(1) {
+                float: left;
+            }
+            
+            .button-container .button:nth-child(2) {
+                float: right;
+            }
+            
+            .item.difficult img {
+                border: 2px solid red;
+            }
+            
+            .item.difficult .name, .item.difficult .definition {
+                color: red;
+            }
+            
+            .item.medium img {
+                border: 2px solid orange;
+            }
+            
+            .item.medium .name, .item.medium .definition {
+                color: orange;
+            }
+            
+            .name {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .definition {
+                font-size: 16px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .items .item {
+                    width: 150px;
+                    height: 225px;
+                }
+            
+                .item img {
+                    width: 100px;
+                    height: 100px;
+                }
+            
+                .button-container .button {
+                    font-size: 24px;
+                }
+            
+                .button-container .button:before {
+                    width: 40px;
+                    height: 40px;
+                }
+            
+                .name {
+                    font-size: 18px;
+                }
+            
+                .definition {
+                    font-size: 14px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .items .item {
+                    width: 120px;
+                    height: 180px;
+                }
+            
+                .item img {
+                    width: 80px;
+                    height: 80px;
+                }
+            
+                .button-container .button {
+                    font-size: 20px;
+                }
+            
+                .button-container .button:before {
+                    width: 30px;
+                    height: 30px;
+                }
+            
+                .name {
+                    font-size: 16px;
+                }
+            
+                .definition {
+                    font-size: 12px;
+                }
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="items">
+        <div class="item active medium">
+            <div class="name">Counter-Attack</div>
+            <img src="/IMAGES/Gemini_Generated_Image_2cw0dx2cw0dx2cw0.jpeg">
+            <div class="definition">When hit, get immediate chance to retaliate.</div>
+        </div>
+        <div class="item next difficult">
+            <div class="name">Stealth Mode</div>
+            <img src="/IMAGES/Gemini_Generated_Image_3eij4f3eij4f3eij.jpeg">
+            <div class="definition">Hide a ship temporarily.</div>
+        </div>
+        <div class="item difficult">
+            <div class="name">Nuke</div>
+            <img src="/IMAGES/Gemini_Generated_Image_6dsbmf6dsbmf6dsb.jpeg">
+            <div class="definition">Hit a 3x3 grid.</div>
+        </div>
+        <div class="item difficult">
+            <div class="name">Shield</div>
+            <img src="/IMAGES/Gemini_Generated_Image_8k6asu8k6asu8k6a.jpeg">
+            <div class="definition">Defend a ship from attack.</div>
+        </div>
+        <div class="item medium">
+            <div class="name">Radar Jam</div>
+            <img src="/IMAGES/Gemini_Generated_Image_a26t6xa26t6xa26t.jpeg">
+            <div class="definition">Make the last hit invalid.</div>
+        </div>
+        <div class="item medium">
+            <div class="name">Artillery</div>
+            <img src="/IMAGES/Gemini_Generated_Image_avfwkiavfwkiavfw.jpeg">
+            <div class="definition"> Get 3 consecutive hits.</div>
+        </div>
+        <div class="item difficult">
+            <div class="name">Jackpot/gods hand</div>
+            <img src="/IMAGES/Gemini_Generated_Image_jdg26djdg26djdg2.jpeg">
+            <div class="definition">Steal opponent's ability/ Spin the wheel.</div>
+        </div>
+        <div class="item medium">
+            <div class="name">Fake Hit</div>
+            <img src="/IMAGES/Gemini_Generated_Image_k1etx9k1etx9k1et.jpeg">
+            <div class="definition">Confuses the team by adding a decoy ship.</div>
+        </div>
+        <div class="item difficult">
+            <div class="name">AirStrike</div>
+            <img src="/IMAGES/Gemini_Generated_Image_v3y8q3v3y8q3v3y8.jpeg">
+            <div class="definition">Attack an entire row/ column.</div>
+        </div>
+        <div class="item medium">
+            <div class="name">HackIt</div>
+            <img src="/IMAGES/Gemini_Generated_Image_ptur09ptur09ptur.jpeg">
+            <div class="definition">Get one enemy location.</div>
+        </div>
+        <div class="item prev difficult">
+            <div class="name">Revive</div>
+            <img src="/IMAGES/Gemini_Generated_Image_qbeyafqbeyafqbey.jpeg">
+            <div class="definition">Return a blown ship and place it somewhere new.(Can’t place a
+                ship on a spot that is hit)</div>
+        </div>
+        <div class="button-container">
+            <div class="button prev-button"><i class="fas fa-angle-left"></i></div>
+            <div class="button next-button"><i class="fas fa-angle-right"></i></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".item");
+            const prevButton = document.querySelector(".prev-button");
+            const nextButton = document.querySelector(".next-button");
+
+            let current = 0;
+
+            const updateSlides = () => {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove("active", "prev", "next");
+                    if (index === current) {
+                        slide.classList.add("active");
+                    } else if (index === (current - 1 + slides.length) % slides.length) {
+                        slide.classList.add("prev");
+                    } else if (index === (current + 1) % slides.length) {
+                        slide.classList.add("next");
+                    }
+                });
+            };
+
+            const gotoPrev = () => {
+                current = (current - 1 + slides.length) % slides.length;
+                updateSlides();
+            };
+
+            const gotoNext = () => {
+                current = (current + 1) % slides.length;
+                updateSlides();
+            };
+
+            prevButton.addEventListener("click", gotoPrev);
+            nextButton.addEventListener("click", gotoNext);
+
+            updateSlides();
+        });
+    </script>
+</body>
+</html>.

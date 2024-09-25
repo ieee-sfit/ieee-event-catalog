@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
         /* Override UGG site */
+        html{
+            background-color: #000000;
+        }
         #main {
             width: 100%;
             padding: 0;
@@ -144,13 +149,15 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            background-image: url(https://raw.githubusercontent.com/ieee-sfit/ieee-event-catalog/refs/heads/main/IMAGES/gtjduhvnjwy31.jpg);
+            height: auto;
+            background-image: url(https://i.pinimg.com/originals/47/79/fb/4779fbe30ea7392487fc2dcce1b5afee.jpg);
             background-attachment: fixed;
             background-size: cover;
             -moz-background-size: cover;
             -webkit-background-size: cover;
             background-repeat: no-repeat;
-            background-position: top center;
+            background-position: center center;
+            
         }
 
         #parallax-world-of-ugg .parallax-two {
@@ -159,7 +166,7 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            background-image: url(https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/Design%205.png?raw=true);
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/003/220/114/original/gaming-abstract-background-video.jpg);
             background-attachment: fixed;
             background-size: cover;
             -moz-background-size: cover;
@@ -174,13 +181,58 @@
             overflow: hidden;
             position: relative;
             width: 100%;
-            background-image: url(https://scontent.fbom53-1.fna.fbcdn.net/v/t39.30808-6/456491341_943233771151636_8197404059412829152_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1KxytM0PQ1EQ7kNvgGIJcrN&_nc_ht=scontent.fbom53-1.fna&_nc_gid=A4CR3GddqpjerY0mxYSxfFI&oh=00_AYAUhfFQ8gehMdZxTND9WQQYprJuc-_uahzlvPyRLmZKfg&oe=66F9F909);
+            background-image: url(https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/Design%205.png?raw=true);
             background-attachment: fixed;
             background-size: cover;
             -moz-background-size: cover;
             -webkit-background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
+        }
+
+        #parallax-world-of-ugg .parallax-four {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://media.gettyimages.com/id/1209505438/video/lightning-thunder-boom-electrical-cartoon-animation-hand-draw-effect-comic-style-computer.jpg?s=640x640&k=20&c=rhk-7eFxfUhd8yH_bMwpQzxFdzq3x4J5qFvveS3jLJg=);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #parallax-world-of-ugg .parallax-five {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://i.pinimg.com/originals/04/f4/eb/04f4eb7a5616fc285be768536aa11f4d.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #parallax-world-of-ugg .parallax-six {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://scontent.fbom53-1.fna.fbcdn.net/v/t39.30808-6/456491341_943233771151636_8197404059412829152_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1KxytM0PQ1EQ7kNvgGIJcrN&_nc_ht=scontent.fbom53-1.fna&_nc_gid=A4CR3GddqpjerY0mxYSxfFI&oh=00_AYAUhfFQ8gehMdZxTND9WQQYprJuc-_uahzlvPyRLmZKfg&oe=66F9F909);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
         }
 
         /* Extras */
@@ -193,14 +245,331 @@
 
         /* Media Queries */
         /**************************/
-        @media screen and (max-width: 959px) and (min-width: 768px) {
-            #parallax-world-of-ugg .block {
-                padding: 40px;
-                width: 620px;
+       
+
+        /* Characters */
+        .characters {
+            background-color: #1e1e2f;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            height: auto;
+            .slideshow-container {
+                position: relative;
+                width: 80%;
+                max-width: 800px;
+            }
+    
+            .slide {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: 450px;
+            }
+    
+            .active {
+                display: block;
+            }
+    
+            .card {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(50, 50, 70, 0.8);
+                border-radius: 10px;
+                overflow: hidden;
+            }
+    
+            .agent-img {
+                position: absolute;
+                bottom: 50px;
+                left: 100px;
+                width: 400px;
+                aspect-ratio: 1/1;
+                transition: transform 0.4s ease-in-out;
+            }
+    
+            /* Updated agent-name styling */
+            .agent-name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 20px;
+                text-wrap: wrap;
+                width: 101%;
+                background: rgb(0, 0, 0);
+                /* Semi-transparent background */
+                font-size: 50px;
+                /* Larger font size */
+                text-align: center;
+                transition: transform 0.6s ease-in-out;
+                z-index: 2;
+                /* Ensure it's on top */
+                color: rgb(255, 255, 255);
+            }
+    
+    
+    
+            .abilities {
+                width: 300px;
+                height: auto;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                text-align: left;
+                background-color: rgba(0, 0, 0, 0.479);
+                padding: 5px;
+                border-radius: 0px 0px 0px 10px;
+                p {
+                    text-wrap: wrap;
+                    font-size: 30px !important;
+                }
+            }
+    
+            /* Buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                color: white;
+                font-size: 18px;
+                transform: translateY(-50%);
+            }
+    
+            .prev {
+                left: 10px;
+            }
+    
+            .next {
+                right: 10px;
             }
         }
 
-        @media screen and (max-width: 767px) {
+        /*game and how to play*/
+        .info{
+            background-color: black;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            .game, .howtoplay {
+                font-family: Arial, sans-serif;
+                width: 95%;
+                background-color: #1e1e1e;
+                padding: 20px;
+                font-size: 25px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+                color: limegreen;
+                
+            }
+            ul {
+                list-style-type: disc;
+                padding-left: 20px;
+            }
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        /*powerups*/
+        .powerups {
+            position: relative;
+            padding: 20px;
+            background-color: #000000;
+            height: 650px;
+            .items {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            
+            .items .item {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 300px;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: all 300ms ease-in-out;
+                z-index: -1;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #000;
+                border: limegreen solid 2px;
+                padding: 10px;
+            }
+            
+            .item img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+            }
+            
+            .item.active {
+                opacity: 1;
+                z-index: 99;
+                box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+            }
+            
+            .item.prev {
+                z-index: 2;
+                opacity: 0.25;
+                transform: translate(-125%, -50%);
+            }
+            
+            .item.next {
+                z-index: 2;
+                opacity: 0.25;
+                transform: translate(25%, -50%);
+            }
+            
+            .items .button-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 275px;
+                z-index: 100;
+            }
+            
+            .button-container .button {
+                color: #fff;
+                font-size: 32px;
+                cursor: pointer;
+                position: relative;
+                opacity: 0.75;
+                transition: all 300ms ease-in-out;
+            }
+            
+            .button-container .button:hover {
+                opacity: 1;
+            }
+            
+            .button-container .button:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50px;
+                height: 50px;
+                background-color: rgba(0, 0, 0, 1);
+                border-radius: 50%;
+                z-index: -99;
+            }
+            
+            .button-container .button:nth-child(1) {
+                float: left;
+            }
+            
+            .button-container .button:nth-child(2) {
+                float: right;
+            }
+            
+            .item.difficult img {
+                border: 2px solid red;
+            }
+            
+            .item.difficult .name, .item.difficult .definition {
+                color: red;
+            }
+            
+            .item.medium img {
+                border: 2px solid orange;
+            }
+            
+            .item.medium .name, .item.medium .definition {
+                color: orange;
+            }
+            
+            .name {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            
+            .definition {
+                font-size: 16px;
+                margin-top: 10px;
+                text-align: center;
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .items .item {
+                    width: 150px;
+                    height: 225px;
+                }
+            
+                .item img {
+                    width: 100px;
+                    height: 100px;
+                }
+            
+                .button-container .button {
+                    font-size: 24px;
+                }
+            
+                .button-container .button:before {
+                    width: 40px;
+                    height: 40px;
+                }
+            
+                .name {
+                    font-size: 18px;
+                }
+            
+                .definition {
+                    font-size: 14px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .items .item {
+                    width: 120px;
+                    height: 180px;
+                }
+            
+                .item img {
+                    width: 80px;
+                    height: 80px;
+                }
+            
+                .button-container .button {
+                    font-size: 20px;
+                }
+            
+                .button-container .button:before {
+                    width: 30px;
+                    height: 30px;
+                }
+            
+                .name {
+                    font-size: 16px;
+                }
+            
+                .definition {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        
+
+        @media (max-width: 768px) {
             #parallax-world-of-ugg .block {
                 padding: 30px;
                 width: 420px;
@@ -219,137 +588,28 @@
             #parallax-world-of-ugg .parallax-three {
                 padding-top: 100px;
                 padding-bottom: 100px;
+                
             }
-        }
+            .characters{
+                .agent-img {
+                    left: 0px;
+                    bottom: 30px;
+                    width: 350px;
+                }
 
-        @media screen and (max-width: 479px) {
-            #parallax-world-of-ugg .block {
-                padding: 30px 15px;
-                width: 290px;
-            }
-        }
+                .agent-name {
+                    font-size: 30px;
+                }
 
-        /* Characters */
-        .body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2f;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .slideshow-container {
-            position: relative;
-            width: 80%;
-            max-width: 800px;
-        }
-
-        .slide {
-            display: none;
-            position: relative;
-            width: 100%;
-            height: 450px;
-        }
-
-        .active {
-            display: block;
-        }
-
-        .card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(50, 50, 70, 0.8);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .agent-img {
-            position: absolute;
-            bottom: 50px;
-            left: 100px;
-            width: 400px;
-            aspect-ratio: 1/1;
-            transition: transform 0.4s ease-in-out;
-        }
-
-        /* Updated agent-name styling */
-        .agent-name {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            padding: 20px;
-            text-wrap: wrap;
-            width: 101%;
-            background: rgb(0, 0, 0);
-            /* Semi-transparent background */
-            font-size: 50px;
-            /* Larger font size */
-            text-align: center;
-            transition: transform 0.6s ease-in-out;
-            z-index: 2;
-            /* Ensure it's on top */
-            color: rgb(255, 255, 255);
-        }
-
-
-
-        .abilities {
-            width: 300px;
-            height: auto;
-            position: absolute;
-            right: 0px;
-            top: 0px;
-            text-align: left;
-            background-color: rgba(0, 0, 0, 0.479);
-            padding: 5px;
-            border-radius: 0px 0px 0px 10px;
-
-            p {
-                text-wrap: wrap;
-                font-size: 30px;
-            }
-        }
-
-        /* Buttons */
-        .prev,
-        .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            font-size: 18px;
-            transform: translateY(-50%);
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .agent-img {
-                left: 0px;
-                bottom: 30px;
-                width: 300px;
-            }
-
-            .agent-name {
-                font-size: 30px;
-            }
-
-            .card .abilities {
-                font-size: 16px;
-                width: 100px;
+                .card 
+                {
+                    height: 600px;
+                    background-position: center;
+                    .abilities {
+                        font-size: 16px;
+                        width: 275px;
+                    }
+                }
             }
         }
     </style>
@@ -371,28 +631,56 @@
             </div>
         </section>
 
-        <section style="background-color: #000000;">
-
+        <section class="info">
+            <div class="game">
+                <p style="font-size: 25px;">A physical 10 x 10 grid. Two teams of 4 play against each other. Players place 5 ships anywhere on the grid.</p>
+                <ul>
+                    <li>Ship Lengths:</li>
+                    <ul>
+                    <li>1 of length 5</li>
+                    <li>1 of length 4</li>
+                    <li>1 of length 2</li>
+                    <li>2 of length 3</li>
+                    </ul>
+    
+                    <li>Time limit: 30 seconds for each team to hit.</li>
+                    <li>Use of Powerup uses one action point.</li>
+                    <li>Powerup can be used only once per turn.</li>
+                    <li>Red(Outline & Text): Difficult<br>Orange(Outline & Text): Medium<br>[Powerups Section Below]</li>
+                    <li>Character ability can be used every third round.</li>
+                </ul>
+            </div>
         </section>
 
         <section>
-            <div class="parallax-one">
+            <div class="parallax-two">
                 <h2>HOW TO PLAY</h2>
 
             </div>
         </section>
 
-        <section style="background-color: #000000;">
-
+        <section class="info">
+            <div class="howtoplay">
+                <ul>
+                    <li>Each player has a 10x10 grid to place their ships.</li>
+                    <li>Players place their fleet of 5 ships on the grid. Ships can be placed horizontally or vertically but not diagonally.</li>
+                    <li>Ships cannot overlap and must be placed within the grid boundaries.</li>
+                    <li>Players take turns calling out coordinates (e.g., "B7") to attack the opponent's ships.</li>
+                    <li>The opponent announces whether the shot is a "hit" or a "miss".</li>
+                    <li>Players mark their hits and misses on a separate grid to keep track of their guesses.</li>
+                    <li>A ship is sunk when all its coordinates have been hit.</li>
+                    <li>The game continues until one player has sunk all of the opponent's ships.</li>
+                </ul>
+            </div>
         </section>
 
         <section>
-            <div class="parallax-two">
+            <div class="parallax-three">
                 <h2>CHARACTERS</h2>
             </div>
         </section>
 
-        <section style="background-color: #000000;" class="body">
+        <section style="background-color: #000000;" class="characters">
             <div class="slideshow-container">
                 <!-- Slide 1 -->
                 <div class="slide active">
@@ -403,7 +691,7 @@
                             alt="Jack">
                         <div class="agent-name">Commander Jack</div>
                         <div class="abilities">
-                            <p>Class: Admiral</p><br>
+                            <p>Class: Admiral</p>
                             <p>Blitzstrike<br>Can hit 2 locations in one turn</p>
                         </div>
                     </div>
@@ -418,7 +706,7 @@
                             alt="Alex">
                         <div class="agent-name">Captain Alex</div>
                         <div class="abilities">
-                            <p>Class: Navigator</p><br>
+                            <p>Class: Navigator</p>
                             <p>AxioSpin<br>Rotate the ship at any given moment</p>
                         </div>
                     </div>
@@ -435,7 +723,7 @@
                             alt="Emma">
                         <div class="agent-name">Dr. Emma</div>
                         <div class="abilities">
-                            <p>Class: Restorer</p><br>
+                            <p>Class: Restorer</p>
                             <p>Healsmith<br>Repairs the ship</p>
                         </div>
                     </div>
@@ -450,7 +738,7 @@
                             alt="Liam">
                         <div class="agent-name">Scout Liam</div>
                         <div class="abilities">
-                            <p>Class: Recon</p><br>
+                            <p>Class: Recon</p>
                             <p>Gridscan<br>Displays Mines/Ships in a 2x2 grid</p>
                         </div>
                     </div>
@@ -465,7 +753,7 @@
                             alt="Mia">
                         <div class="agent-name">Sage Mia</div>
                         <div class="abilities">
-                            <p>Class: Oracle</p><br>
+                            <p>Class: Oracle</p>
                             <p>Insight<br>Get a hint for a task</p>
                         </div>
                     </div>
@@ -480,7 +768,7 @@
                             alt="Max">
                         <div class="agent-name">Bomber Max</div>
                         <div class="abilities">
-                            <p>Class: Demolisher</p><br>
+                            <p>Class: Demolisher</p>
                             <p>Riskbreaker<br>If hit by a mine, you lose a turn</p>
                         </div>
                     </div>
@@ -493,17 +781,78 @@
         </section>
 
         <section>
-            <div class="parallax-three">
+            <div class="parallax-four">
                 <h2>POWERUPS</h2>
             </div>
         </section>
 
-        <section style="background-color: #000000;">
-
+        <section  class="powerups">
+            <div class="items">
+                <div class="item active medium">
+                    <div class="name">Counter-Attack</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_2cw0dx2cw0dx2cw0.jpeg">
+                    <div class="definition">When hit, get immediate chance to retaliate.</div>
+                </div>
+                <div class="item next difficult">
+                    <div class="name">Stealth Mode</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_3eij4f3eij4f3eij.jpeg">
+                    <div class="definition">Hide a ship temporarily.</div>
+                </div>
+                <div class="item difficult">
+                    <div class="name">Nuke</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_6dsbmf6dsbmf6dsb.jpeg">
+                    <div class="definition">Hit a 3x3 grid.</div>
+                </div>
+                <div class="item difficult">
+                    <div class="name">Shield</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_8k6asu8k6asu8k6a.jpeg">
+                    <div class="definition">Defend a ship from attack.</div>
+                </div>
+                <div class="item medium">
+                    <div class="name">Radar Jam</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_a26t6xa26t6xa26t.jpeg">
+                    <div class="definition">Make the last hit invalid.</div>
+                </div>
+                <div class="item medium">
+                    <div class="name">Artillery</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_avfwkiavfwkiavfw.jpeg">
+                    <div class="definition"> Get 3 consecutive hits.</div>
+                </div>
+                <div class="item difficult">
+                    <div class="name">Jackpot/gods hand</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_jdg26djdg26djdg2.jpeg">
+                    <div class="definition">Steal opponent's ability/ Spin the wheel.</div>
+                </div>
+                <div class="item medium">
+                    <div class="name">Fake Hit</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_k1etx9k1etx9k1et.jpeg">
+                    <div class="definition">Confuses the team by adding a decoy ship.</div>
+                </div>
+                <div class="item difficult">
+                    <div class="name">AirStrike</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_v3y8q3v3y8q3v3y8.jpeg">
+                    <div class="definition">Attack an entire row/ column.</div>
+                </div>
+                <div class="item medium">
+                    <div class="name">HackIt</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_ptur09ptur09ptur.jpeg">
+                    <div class="definition">Get one enemy location.</div>
+                </div>
+                <div class="item prev difficult">
+                    <div class="name">Revive</div>
+                    <img src="/IMAGES/Gemini_Generated_Image_qbeyafqbeyafqbey.jpeg">
+                    <div class="definition">Return a blown ship and place it somewhere new.(Can’t place a
+                        ship on a spot that is hit)</div>
+                </div>
+                <div class="button-container">
+                    <div class="button prev-button"><i class="fas fa-angle-left"></i></div>
+                    <div class="button next-button"><i class="fas fa-angle-right"></i></div>
+                </div>
+            </div>
         </section>
 
         <section>
-            <div class="parallax-three">
+            <div class="parallax-five">
                 <h2>BATTLESHIPS</h2>
             </div>
         </section>
@@ -513,7 +862,7 @@
         </section>
 
         <section>
-            <div class="parallax-three">
+            <div class="parallax-six">
                 <h2><a>Register Now!</a></h2>
             </div>
         </section>
@@ -546,6 +895,43 @@
                  agentName.style.transform = 'translateX(-5px)';
              }, 300);
         }
+
+        /*powerups*/
+        document.addEventListener("DOMContentLoaded", () => {
+            const slides = document.querySelectorAll(".item");
+            const prevButton = document.querySelector(".prev-button");
+            const nextButton = document.querySelector(".next-button");
+
+            let current = 0;
+
+            const updateSlides = () => {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove("active", "prev", "next");
+                    if (index === current) {
+                        slide.classList.add("active");
+                    } else if (index === (current - 1 + slides.length) % slides.length) {
+                        slide.classList.add("prev");
+                    } else if (index === (current + 1) % slides.length) {
+                        slide.classList.add("next");
+                    }
+                });
+            };
+
+            const gotoPrev = () => {
+                current = (current - 1 + slides.length) % slides.length;
+                updateSlides();
+            };
+
+            const gotoNext = () => {
+                current = (current + 1) % slides.length;
+                updateSlides();
+            };
+
+            prevButton.addEventListener("click", gotoPrev);
+            nextButton.addEventListener("click", gotoNext);
+
+            updateSlides();
+        });
     </script>
 </body>
 
