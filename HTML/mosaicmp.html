@@ -1,112 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 
-/* Override UGG site */
-#main {width: 100%; padding:0;}
-.content-asset p {margin:0 auto;}
-.breadcrumb {display:none;}
+        /* Override UGG site */
+        #main {
+            width: 100%;
+            padding: 0;
+        }
 
-/* Helpers */
-/**************************/
-.margin-top-10 {padding-top:10px;}
-.margin-bot-10 {padding-bottom:10px;}
+        .content-asset p {
+            margin: 0 auto;
+        }
 
-/* Typography */
-/**************************/
-#parallax-world-of-ugg h1 {font-family:'Oswald', sans-serif; font-size:24px; font-weight:400; text-transform: uppercase; color:rgb(255, 255, 255); padding:0; margin:0;}
-#parallax-world-of-ugg h2 {font-family:'Oswald', sans-serif; font-size:70px; letter-spacing:10px; text-align:center; color:white; font-weight:400; text-transform:uppercase; z-index:10; opacity:.9;}
-#parallax-world-of-ugg h3 {font-family:'Oswald', sans-serif; font-size:14px; line-height:0; font-weight:400; letter-spacing:8px; text-transform: uppercase; color:rgb(255, 255, 255);}
-#parallax-world-of-ugg p {font-family:'Source Sans Pro', sans-serif; font-weight:400; font-size:14px; line-height:24px;}
-.first-character {font-weight:400; float: left; font-size: 84px; line-height: 64px; padding-top: 4px; padding-right: 8px; padding-left: 3px; font-family: 'Source Sans Pro', sans-serif;}
+        .breadcrumb {
+            display: none;
+        }
 
-.sc {color: #3b8595;}
-.ny {color: #3d3c3a;}
-.atw {color: #c48660;}
+        /* Helpers */
+        /**************************/
+        .margin-top-10 {
+            padding-top: 10px;
+        }
 
-/* Section - Title */
-/**************************/
-#parallax-world-of-ugg .title {background: rgb(0, 0, 0); padding: 60px; margin:0 auto; text-align:center;}
-#parallax-world-of-ugg .title h1 {font-size:35px; letter-spacing:8px;}
+        .margin-bot-10 {
+            padding-bottom: 10px;
+        }
 
-/* Section - Block */
-/**************************/
-#parallax-world-of-ugg .block {background: rgb(0, 0, 0); padding: 60px; width:820px; margin:0 auto; text-align:justify;}
-#parallax-world-of-ugg .block-gray {background: #000000;padding: 60px;}
-#parallax-world-of-ugg .section-overlay-mask {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: black; opacity: 0.70;}
+        /* Typography */
+        /**************************/
+        #parallax-world-of-ugg h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            padding: 0;
+            margin: 0;
+        }
 
-/* Section - Parallax */
-/**************************/
-#parallax-world-of-ugg .parallax-one {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://img.freepik.com/free-photo/bermuda-triangle-with-mystical-neon_23-2151628207.jpg?t=st=1727269241~exp=1727272841~hmac=4dde96312f12c84329730d25156495d79e0b7908a0ab5f4f1ba89c559113a8d2&w=1380); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: top center;}
-#parallax-world-of-ugg .parallax-two {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1432163230927-a32e4fd5a326?dpr=1&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
-#parallax-world-of-ugg .parallax-three {padding-top: 200px; padding-bottom: 200px; overflow: hidden; position: relative; width: 100%; background-image: url(https://images.unsplash.com/photo-1440688807730-73e4e2169fb8?dpr=1&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=); background-attachment: fixed; background-size: cover; -moz-background-size: cover; -webkit-background-size: cover; background-repeat: no-repeat; background-position: center center;}
+        #parallax-world-of-ugg h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 70px;
+            letter-spacing: 10px;
+            text-align: center;
+            color: white;
+            font-weight: 400;
+            text-transform: uppercase;
+            z-index: 10;
+            opacity: .9;
+        }
 
-/* Extras */
-/**************************/
-#parallax-world-of-ugg .line-break {border-bottom:1px solid black; width: 150px; margin:0 auto;}
+        #parallax-world-of-ugg h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            line-height: 0;
+            font-weight: 400;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+        }
 
-/* Media Queries */
-/**************************/
-@media screen and (max-width: 959px) and (min-width: 768px) {
-  #parallax-world-of-ugg .block {padding: 40px; width:620px;}
-}
-@media screen and (max-width: 767px) {
-  #parallax-world-of-ugg .block {padding: 30px; width:420px;}
-  #parallax-world-of-ugg h2 {font-size:30px;}
-  #parallax-world-of-ugg .block {padding: 30px;}
-  #parallax-world-of-ugg .parallax-one, #parallax-world-of-ugg .parallax-two, #parallax-world-of-ugg .parallax-three {padding-top:100px; padding-bottom:100px;}
-}
-@media screen and (max-width: 479px) {
-  #parallax-world-of-ugg .block {padding: 30px 15px; width:290px;}
-}
+        #parallax-world-of-ugg p {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .first-character {
+            font-weight: 400;
+            float: left;
+            font-size: 84px;
+            line-height: 64px;
+            padding-top: 4px;
+            padding-right: 8px;
+            padding-left: 3px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .sc {
+            color: #3b8595;
+        }
+
+        .ny {
+            color: #3d3c3a;
+        }
+
+        .atw {
+            color: #c48660;
+        }
+
+        /* Section - Title */
+        /**************************/
+        #parallax-world-of-ugg .title {
+            background: rgb(0, 0, 0);
+            padding: 60px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #parallax-world-of-ugg .title h1 {
+            font-size: 35px;
+            letter-spacing: 8px;
+        }
+
+        /* Section - Block */
+        /**************************/
+        #parallax-world-of-ugg .block {
+            background: rgb(0, 0, 0);
+            padding: 60px;
+            width: 820px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        #parallax-world-of-ugg .block-gray {
+            background: #000000;
+            padding: 60px;
+        }
+
+        #parallax-world-of-ugg .section-overlay-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.70;
+        }
+
+        /* Section - Parallax */
+        /**************************/
+        #parallax-world-of-ugg .parallax-one {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://raw.githubusercontent.com/ieee-sfit/ieee-event-catalog/refs/heads/main/IMAGES/gtjduhvnjwy31.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+
+        #parallax-world-of-ugg .parallax-two {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://wowsp-wows-na.wgcdn.co/dcont/fb/image/tmb/e2e12dd4-29aa-11e6-b5f8-d89d6715223c_1200x.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        #parallax-world-of-ugg .parallax-three {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-image: url(https://scontent.fbom53-1.fna.fbcdn.net/v/t39.30808-6/456491341_943233771151636_8197404059412829152_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=1KxytM0PQ1EQ7kNvgGIJcrN&_nc_ht=scontent.fbom53-1.fna&_nc_gid=A4CR3GddqpjerY0mxYSxfFI&oh=00_AYAUhfFQ8gehMdZxTND9WQQYprJuc-_uahzlvPyRLmZKfg&oe=66F9F909);
+            background-attachment: fixed;
+            background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        /* Extras */
+        /**************************/
+        #parallax-world-of-ugg .line-break {
+            border-bottom: 1px solid black;
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        /* Media Queries */
+        /**************************/
+        @media screen and (max-width: 959px) and (min-width: 768px) {
+            #parallax-world-of-ugg .block {
+                padding: 40px;
+                width: 620px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            #parallax-world-of-ugg .block {
+                padding: 30px;
+                width: 420px;
+            }
+
+            #parallax-world-of-ugg h2 {
+                font-size: 30px;
+            }
+
+            #parallax-world-of-ugg .block {
+                padding: 30px;
+            }
+
+            #parallax-world-of-ugg .parallax-one,
+            #parallax-world-of-ugg .parallax-two,
+            #parallax-world-of-ugg .parallax-three {
+                padding-top: 100px;
+                padding-bottom: 100px;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            #parallax-world-of-ugg .block {
+                padding: 30px 15px;
+                width: 290px;
+            }
+        }
+
+        /* Characters */
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .slide {
+            display: none;
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(50, 50, 70, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateX(0);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .agent-img {
+            position: absolute;
+            bottom: 50px;
+            left: 100px;
+            width: 400px;
+            aspect-ratio: 1/1;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        /* Updated agent-name styling */
+        .agent-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            text-wrap: wrap;
+            width: 101%;
+            background: rgb(0, 0, 0);
+            /* Semi-transparent background */
+            font-size: 50px;
+            /* Larger font size */
+            text-align: center;
+            transition: transform 0.6s ease-in-out;
+            z-index: 2;
+            /* Ensure it's on top */
+            color: rgb(255, 255, 255);
+        }
+
+
+
+        .abilities {
+            width: 300px;
+            height: auto;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            font-size: 30px;
+            text-align: left;
+            background-color: rgba(0, 0, 0, 0.479);
+            padding: 5px;
+            border-radius: 0px 0px 0px 10px;
+
+            p {
+                text-wrap: wrap;
+            }
+        }
+
+        /* Buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 18px;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .agent-img {
+                left: 0px;
+                bottom: 30px;
+                width: 300px;
+            }
+
+            .agent-name {
+                font-size: 30px;
+            }
+
+            .card .abilities {
+                font-size: 16px;
+                width: 100px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="parallax-world-of-ugg">
-  
+
         <section>
-          <div class="title">
-            <h3>Let's do some</h3>
-            <h1>BATTLESHIPS</h1>
-          </div>
-        </section>
-        
-        <section>
-            <div class="parallax-one">
-              <h2>GAME RULES</h2>
+            <div class="title">
+                <h3>Let's do some</h3>
+                <h1>BATTLESHIPS</h1>
             </div>
         </section>
-        
-        <section style="background-color: #000000;">
-          
-        </section>
-        
+
         <section>
-          <div class="parallax-two">
-            <h2>CHARACTERS</h2>
-          </div>
+            <div class="parallax-one">
+                <h2>GAME</h2>
+            </div>
         </section>
-        
+
         <section style="background-color: #000000;">
-          
+
         </section>
-        
+
         <section>
-          <div class="parallax-three">
-            <h2>POWERUPS</h2>
-          </div>
+            <div class="parallax-one">
+                <h2>HOW TO PLAY</h2>
+
+            </div>
         </section>
-        
+
         <section style="background-color: #000000;">
-          
+
         </section>
-          
-        </div>
+
+        <section>
+            <div class="parallax-two">
+                <h2>CHARACTERS</h2>
+            </div>
+        </section>
+
+        <section style="background-color: #000000;" class="body">
+            <div class="slideshow-container">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="card"
+                        style="background-image: url('https://www.shutterstock.com/image-photo/war-concept-night-battle-scene-600nw-1970747396.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://raw.githubusercontent.com/ieee-sfit/ieee-event-catalog/refs/heads/main/IMAGES/fotor-ai-20240924233928-removebg-preview.png"
+                            alt="Jack">
+                        <div class="agent-name">Commander Jack</div>
+                        <div class="abilities">
+                            <p>Class: Admiral</p><br>
+                            <p>Blitzstrike<br>Can hit 2 locations in one turn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="card"
+                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230407/pngtree-sea-waves-turbulent-water-ripples-image_2145390.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/fotor-ai-20240924233551-removebg-preview.png?raw=true"
+                            alt="Alex">
+                        <div class="agent-name">Captain Alex</div>
+                        <div class="abilities">
+                            <p>Class: Navigator</p><br>
+                            <p>AxioSpin<br>Rotate the ship at any given moment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more slides for other agents -->
+
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="card"
+                        style="background-image: url('https://wallpaperaccess.com/full/1628817.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-shipwrightyoung-lady-and--removebg-preview.png?raw=true"
+                            alt="Emma">
+                        <div class="agent-name">Dr. Emma</div>
+                        <div class="abilities">
+                            <p>Class: Restorer</p><br>
+                            <p>Healsmith<br>Repairs the ship</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="card"
+                        style="background-image: url('https://t4.ftcdn.net/jpg/04/96/93/97/360_F_496939773_GXjGabzlSY0sSXOAG2pofBYqcKmZeXaq.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Recon-Scout-Liam-and-the--removebg-preview.png?raw=true"
+                            alt="Liam">
+                        <div class="agent-name">Scout Liam</div>
+                        <div class="abilities">
+                            <p>Class: Recon</p><br>
+                            <p>Gridscan<br>Displays Mines/Ships in a 2x2 grid</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="card"
+                        style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/034/895/364/small_2x/animated-illustration-of-moving-a-staircase-to-heaven-seamless-looping-animated-video.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Oracle-Sage-Mia-and-the-i-removebg-preview.png?raw=true"
+                            alt="Mia">
+                        <div class="agent-name">Sage Mia</div>
+                        <div class="abilities">
+                            <p>Class: Oracle</p><br>
+                            <p>Insight<br>Get a hint for a task</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="slide">
+                    <div class="card"
+                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230715/pngtree-3d-illustration-of-warzone-destruction-from-nuclear-bomb-attack-image_3889544.jpg');background-repeat: no-repeat;background-size: cover;">
+                        <img class="agent-img"
+                            src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Demolisher-Bomber-Max-and-removebg-preview.png?raw=true"
+                            alt="Max">
+                        <div class="agent-name">Bomber Max</div>
+                        <div class="abilities">
+                            <p>Class: Demolisher</p><br>
+                            <p>Riskbreaker<br>If hit by a mine, you lose a turn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next and Previous Buttons -->
+                <button class="prev" onclick="moveSlides(-1)">❮</button>
+                <button class="next" onclick="moveSlides(1)">❯</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="parallax-three">
+                <h2>POWERUPS</h2>
+            </div>
+        </section>
+
+        <section style="background-color: #000000;">
+
+        </section>
+
+        <section>
+            <div class="parallax-three">
+                <h2>BATTLESHIPS</h2>
+            </div>
+        </section>
+
+        <section style="background-color: #000000;">
+
+        </section>
+
+        <section>
+            <div class="parallax-three">
+                <h2><a>Register Now!</a></h2>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        /*Characters*/
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function moveSlides(direction) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+
+            // Animate the card, agent image, and agent name
+            let agentImg = slides[currentSlide].querySelector('.agent-img');
+            let card = slides[currentSlide].querySelector('.card');
+            let agentName = slides[currentSlide].querySelector('.agent-name');
+
+            card.style.transform = 'translateX(0)';
+            agentImg.style.transform = 'translateX(20px)';
+            agentName.style.transform = 'translateX(10px)';
+
+            setTimeout(() => {
+                card.style.transform = 'translateX(-10px)';
+                agentImg.style.transform = 'translateX(0)';
+                agentName.style.transform = 'translateX(-5px)';
+            }, 300);
+        }
+    </script>
 </body>
+
 </html>
