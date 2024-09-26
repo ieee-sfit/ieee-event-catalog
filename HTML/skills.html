@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquee Service Card Scrolling</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .marquee-container {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .marquee {
+            display: flex;
+            width: calc(100% * 10); /* Adjusted for 10 cards */
+            animation: scroll 30s linear infinite; /* Adjusted duration for smoother scroll */
+        }
+        
+        .card {
+            position: relative;
+            width: 10%; /* Adjusted for 10 cards */
+            flex-shrink: 0;
+        }
+        
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Scroll half the width of the container */
+            }
+        }
+        
+        .marquee-container:hover .marquee {
+            animation-play-state: paused;
+        }
+        
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .card {
+                width: 85vw;
+            }
+            .marquee {
+                width: calc(85vw * 10); /* Adjusted for 10 cards */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="card">
+                <img src="/IMAGES/aircraftcarrieri.jpg" alt="Service 1">
+                <div class="text-overlay">Service 1</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/battleshipi.jpeg" alt="Service 2">
+                <div class="text-overlay">Service 2</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/cruiseri.jpeg" alt="Service 3">
+                <div class="text-overlay">Service 3</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/submarinei.jpeg" alt="Service 4">
+                <div class="text-overlay">Service 4</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/destroyeri.jpg" alt="Service 5">
+                <div class="text-overlay">Service 5</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/aircraftcarrieri.jpg" alt="Service 1">
+                <div class="text-overlay">Service 1</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/battleshipi.jpeg" alt="Service 2">
+                <div class="text-overlay">Service 2</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/cruiseri.jpeg" alt="Service 3">
+                <div class="text-overlay">Service 3</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/submarinei.jpeg" alt="Service 4">
+                <div class="text-overlay">Service 4</div>
+            </div>
+            <div class="card">
+                <img src="/IMAGES/destroyeri.jpg" alt="Service 5">
+                <div class="text-overlay">Service 5</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
