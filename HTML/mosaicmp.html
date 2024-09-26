@@ -5,11 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BATTLESHIPS | BATTLE TO VICTORY</title>
-    <link rel="icon" href="/IMAGES/BATTLESHIPS-removebg-preview.png" type="image">
+    <link rel="icon" href="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/BATTLESHIPS-removebg-preview.png?raw=true" type="image">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
@@ -524,31 +522,28 @@
 
             /* Responsive Styles */
             @media (max-width: 768px) {
-                .items .item {
-                    width: 150px;
-                    height: 225px;
+                .powerups .items .item {
+                    width: 200px; /* Increase width */
+                    height: 300px; /* Increase height */
+                    padding: 20px;
+                    display: none; /* Hide all items by default */
                 }
-
-                .item img {
-                    width: 100px;
-                    height: 100px;
+            
+                .powerups .items .item.active {
+                    display: block; /* Show only the active item */
                 }
-
+            
+                .powerups .item img {
+                    width: 150px; /* Adjust image width */
+                    height: 150px; /* Adjust image height */
+                }
+            
                 .button-container .button {
                     font-size: 24px;
                 }
-
+            
                 .button-container .button:before {
                     width: 40px;
-                    height: 40px;
-                }
-
-                .name {
-                    font-size: 22px;
-                }
-
-                .definition {
-                    font-size: 16px;
                 }
             }
 
@@ -556,6 +551,8 @@
                 .items .item {
                     width: 120px;
                     height: 180px;
+                    display: flex;
+                    flex-direction: column;
                 }
 
                 .item img {
@@ -573,6 +570,7 @@
                 }
 
                 .name {
+                    text-align: center;
                     font-size: 17px;
                 }
 
@@ -608,8 +606,9 @@
 
         /*Ships*/
         .ships{
+            padding: 20px;
             color: white;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         /*Register*/
@@ -995,10 +994,12 @@
                     <div class="definition"> Get 3 consecutive hits.</div>
                 </div>
                 <div class="item difficult">
-                    <div class="name">Jackpot/gods hand</div>
+                    <div class="name">God's Hand</div>
+                    <div class="name">JackPot</div>
                     <img
                         src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/Gemini_Generated_Image_jdg26djdg26djdg2.jpeg?raw=true">
-                    <div class="definition">Steal opponent's ability/ Spin the wheel.</div>
+                    <div class="definition">Steal opponent's ability.</div>
+                    <div class="definition">Spin the wheel.</div>
                 </div>
                 <div class="item medium">
                     <div class="name">Fake Hit</div>
@@ -1022,8 +1023,7 @@
                     <div class="name">Revive</div>
                     <img
                         src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/Gemini_Generated_Image_qbeyafqbeyafqbey.jpeg?raw=true">
-                    <div class="definition">Return a blown ship and place it somewhere new.(Can’t place a
-                        ship on a spot that is hit)</div>
+                    <div class="definition">Move blown ship to a non-hit location.</div>
                 </div>
                 <div class="button-container">
                     <div class="button prev-button"><i class="fas fa-angle-left"></i></div>
