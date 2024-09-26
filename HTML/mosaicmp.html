@@ -15,6 +15,8 @@
         /* Override UGG site */
         html {
             background-color: #000000;
+            padding-left: 5px;
+            overflow-x: hidden;
         }
 
         #main {
@@ -525,8 +527,6 @@
                 .powerups .items .item {
                     width: 200px; /* Increase width */
                     height: 300px; /* Increase height */
-                    padding: 20px;
-                    display: none; /* Hide all items by default */
                 }
             
                 .powerups .items .item.active {
@@ -549,8 +549,8 @@
 
             @media (max-width: 480px) {
                 .items .item {
-                    width: 120px;
-                    height: 180px;
+                    width: 140px;
+                    height: 200px;
                     display: flex;
                     flex-direction: column;
                 }
