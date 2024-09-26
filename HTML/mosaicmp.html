@@ -609,7 +609,70 @@
             padding: 20px;
             color: white;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+            .marquee-container {
+                overflow: hidden;
+                width: 100%;
+            }
+            
+            .marquee {
+                display: flex;
+                animation: none;
+            }
+            
+            .card {
+                flex: 0 0 auto;
+                width: 20%;
+                position: relative;
+                background-color: #000000;
+            }
+            
+            .card img {
+                width: 100%;
+                height: auto;
+            }
+            
+                        /* Remove the extra closing brace at the beginning */
+            .text-overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                text-align: center;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            
+            @keyframes marquee {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+            
+            /* Media query for screens with a maximum width of 768px */
+            @media (max-width: 768px) {
+                .marquee {
+                    flex-direction: column;
+                    animation: none; /* Disable animation for smaller screens */
+                }
+            
+                .card {
+                    width: 100%;
+                    margin-bottom: 10px; /* Add some space between cards */
+                }
+            
+                .text-overlay {
+                    font-size: 14px; /* Adjust font size for smaller screens */
+                    padding: 5px; /* Adjust padding for smaller screens */
+                }
+            }
         }
+        
+        
 
         /*Register*/
         .register {
@@ -1038,8 +1101,31 @@
             </div>
         </section>
 
-        <section style="background-color: #000000;" class="ships">
-            Deranged
+        <section class="ships">
+            <div class="marquee-container">
+                <div class="marquee">
+                    <div class="card">
+                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/aircraftcarrieri-removebg-preview.png?raw=true" alt="Service 1">
+                        <div class="text-overlay">AirCraft Carrier (1x5)</div>
+                    </div>
+                    <div class="card">
+                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/battleshipi-removebg-preview.png?raw=true" alt="Service 2">
+                        <div class="text-overlay">BattleShip (1x4)</div>
+                    </div>
+                    <div class="card">
+                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/cruiseri-removebg-preview.png?raw=true" alt="Service 3">
+                        <div class="text-overlay">Cruiser (1x3)</div>
+                    </div>
+                    <div class="card">
+                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/submarinei-removebg-preview.png?raw=true" alt="Service 4">
+                        <div class="text-overlay">Submarine (1x3)</div>
+                    </div>
+                    <div class="card">
+                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/destroyeri-removebg-preview.png?raw=true" alt="Service 5">
+                        <div class="text-overlay">Destroyer (1x2)</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section>
