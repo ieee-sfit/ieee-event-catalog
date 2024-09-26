@@ -254,6 +254,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            align-content: center;
             min-height: 100vh;
             height: auto;
             .slideshow-container {
@@ -274,7 +275,7 @@
             }
     
             .card {
-                position: absolute;
+                position: relative;
                 width: 100%;
                 height: 100%;
                 background-color: rgba(50, 50, 70, 0.8);
@@ -285,7 +286,6 @@
             .agent-img {
                 position: absolute;
                 bottom: 50px;
-                left: 100px;
                 width: 400px;
                 aspect-ratio: 1/1;
                 transition: transform 0.4s ease-in-out;
@@ -298,7 +298,7 @@
                 left: 0;
                 padding: 20px;
                 text-wrap: wrap;
-                width: 101%;
+                width: 100%;
                 background: rgb(0, 0, 0);
                 /* Semi-transparent background */
                 font-size: 50px;
@@ -322,10 +322,9 @@
                 background-color: rgba(0, 0, 0, 0.479);
                 padding: 5px;
                 border-radius: 0px 0px 0px 10px;
-                p {
-                    text-wrap: wrap;
-                    font-size: 30px !important;
-                }
+                text-wrap: wrap;
+                font-size: 30px;
+                
             }
     
             /* Buttons */
@@ -590,28 +589,121 @@
                 padding-bottom: 100px;
                 
             }
-            .characters{
-                .agent-img {
-                    left: 0px;
-                    bottom: 30px;
-                    width: 350px;
-                }
-
-                .agent-name {
-                    font-size: 30px;
-                }
-
-                .card 
-                {
-                    height: 600px;
-                    background-position: center;
-                    .abilities {
-                        font-size: 16px;
-                        width: 275px;
-                    }
-                }
+            /* General Styles */
+            .characters {
+                background-color: #1e1e2f;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                min-height: 100vh;
+                padding: 15px; /* Reduce padding on smaller screens */
+            }
+            
+            /* Responsive Slideshow Container */
+            .slideshow-container {
+                position: relative;
+                width: 100%;
+                max-width: 800px; /* Maintain original max-width for larger screens */
+            }
+            
+            /* Responsive Slide */
+            .slide {
+                display: none;
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            
+            /* Responsive Active Slide */
+            .active {
+                display: block;
+            }
+            
+            /* Responsive Card */
+            .card {
+                position: relative;
+                width: 100%;
+                height: auto; /* Allow card height to adjust based on content */
+                background-color: rgba(50, 50, 70, 0.8);
+                border-radius: 5px; /* Reduce border radius on smaller screens */
+                overflow: hidden;
+                background-position: center center;
+            }
+            
+            /* Responsive Agent Image */
+            .agent-img {
+                position: absolute;
+                bottom: 10px !important; /* Adjust bottom position for smaller screens */
+                left: 0px !important;
+                transform: translateX(-5px);
+                width: 70%; /* Increase width to accommodate smaller screens */
+                max-width: 300px;
+                transition: transform 0.4s ease-in-out;
+                object-position: center center;
+                z-index: 2;
+            }
+            
+            /* Responsive Agent Name */
+            .agent-name {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 5px;
+                width: 100%;
+                text-wrap: wrap;
+                background: rgba(0, 0, 0, 0.7);
+                font-size: 30px !important; /* Adjust font size based on viewport and add a minimum */
+                text-align: left;
+                transition: transform 0.6s ease-in-out;
+                z-index: 3;
+                color: rgb(255, 255, 255);
+            }
+            
+            /* Responsive Abilities */
+            .abilities {
+                min-width: 150px !important;
+                max-width: 200px !important; /* Reduce max-width for smaller screens */
+                position: absolute;
+                right: 0;
+                top: 0;
+                text-align: left;
+                background-color: rgba(0, 0, 0, 0.479);
+                padding: 5px;
+                border-radius: 0 0 0 10px; 
+                text-wrap: wrap; /* Adjust font size based on viewport and add a minimum */
+                font-size: 20px !important; 
+                z-index: 1;              
+            }
+            
+            
+            
+            /* Responsive Navigation Buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 8px; /* Reduce padding on smaller screens */
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                color: white;
+                font-size: 16px; /* Reduce font size on smaller screens */
+                transform: translateY(-50%);
+                z-index: 4;
+            }
+            
+            .prev {
+                left: 10px;
+            }
+            
+            .next {
+                right: 10px;
             }
         }
+        
     </style>
 </head>
 
@@ -685,14 +777,14 @@
                 <!-- Slide 1 -->
                 <div class="slide active">
                     <div class="card"
-                        style="background-image: url('https://www.shutterstock.com/image-photo/war-concept-night-battle-scene-600nw-1970747396.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://www.shutterstock.com/image-photo/war-concept-night-battle-scene-600nw-1970747396.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://raw.githubusercontent.com/ieee-sfit/ieee-event-catalog/refs/heads/main/IMAGES/fotor-ai-20240924233928-removebg-preview.png"
                             alt="Jack">
                         <div class="agent-name">Commander Jack</div>
                         <div class="abilities">
-                            <p>Class: Admiral</p>
-                            <p>Blitzstrike<br>Can hit 2 locations in one turn</p>
+                            Class: Admiral<br><br>
+                            Blitzstrike<br>Can hit 2 locations in one turn
                         </div>
                     </div>
                 </div>
@@ -700,14 +792,14 @@
                 <!-- Slide 2 -->
                 <div class="slide">
                     <div class="card"
-                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230407/pngtree-sea-waves-turbulent-water-ripples-image_2145390.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230407/pngtree-sea-waves-turbulent-water-ripples-image_2145390.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/fotor-ai-20240924233551-removebg-preview.png?raw=true"
                             alt="Alex">
                         <div class="agent-name">Captain Alex</div>
                         <div class="abilities">
-                            <p>Class: Navigator</p>
-                            <p>AxioSpin<br>Rotate the ship at any given moment</p>
+                            Class: Navigator<br><br>
+                            AxioSpin<br>Rotate the ship at any given moment
                         </div>
                     </div>
                 </div>
@@ -717,14 +809,14 @@
                 <!-- Slide 3 -->
                 <div class="slide">
                     <div class="card"
-                        style="background-image: url('https://wallpaperaccess.com/full/1628817.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://wallpaperaccess.com/full/1628817.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-shipwrightyoung-lady-and--removebg-preview.png?raw=true"
                             alt="Emma">
                         <div class="agent-name">Dr. Emma</div>
                         <div class="abilities">
-                            <p>Class: Restorer</p>
-                            <p>Healsmith<br>Repairs the ship</p>
+                            Class: Restorer<br><br>
+                            Healsmith<br>Repairs the ship
                         </div>
                     </div>
                 </div>
@@ -732,14 +824,14 @@
                 <!-- Slide 4 -->
                 <div class="slide">
                     <div class="card"
-                        style="background-image: url('https://t4.ftcdn.net/jpg/04/96/93/97/360_F_496939773_GXjGabzlSY0sSXOAG2pofBYqcKmZeXaq.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://t4.ftcdn.net/jpg/04/96/93/97/360_F_496939773_GXjGabzlSY0sSXOAG2pofBYqcKmZeXaq.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Recon-Scout-Liam-and-the--removebg-preview.png?raw=true"
                             alt="Liam">
                         <div class="agent-name">Scout Liam</div>
                         <div class="abilities">
-                            <p>Class: Recon</p>
-                            <p>Gridscan<br>Displays Mines/Ships in a 2x2 grid</p>
+                            Class: Recon<br><br>
+                            Gridscan<br>Displays Mines/Ships in a 2x2 grid
                         </div>
                     </div>
                 </div>
@@ -747,14 +839,14 @@
                 <!-- Slide 5 -->
                 <div class="slide">
                     <div class="card"
-                        style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/034/895/364/small_2x/animated-illustration-of-moving-a-staircase-to-heaven-seamless-looping-animated-video.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/034/895/364/small_2x/animated-illustration-of-moving-a-staircase-to-heaven-seamless-looping-animated-video.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Oracle-Sage-Mia-and-the-i-removebg-preview.png?raw=true"
                             alt="Mia">
                         <div class="agent-name">Sage Mia</div>
                         <div class="abilities">
-                            <p>Class: Oracle</p>
-                            <p>Insight<br>Get a hint for a task</p>
+                            Class: Oracle<br><br>
+                            Insight<br>Get a hint for a task
                         </div>
                     </div>
                 </div>
@@ -762,14 +854,14 @@
                 <!-- Slide 6 -->
                 <div class="slide">
                     <div class="card"
-                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230715/pngtree-3d-illustration-of-warzone-destruction-from-nuclear-bomb-attack-image_3889544.jpg');background-repeat: no-repeat;background-size: cover;">
+                        style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230715/pngtree-3d-illustration-of-warzone-destruction-from-nuclear-bomb-attack-image_3889544.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
                         <img class="agent-img"
                             src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/pikaso_texttoimage_valorant-art-style-based-Demolisher-Bomber-Max-and-removebg-preview.png?raw=true"
                             alt="Max">
                         <div class="agent-name">Bomber Max</div>
                         <div class="abilities">
-                            <p>Class: Demolisher</p>
-                            <p>Riskbreaker<br>If hit by a mine, you lose a turn</p>
+                            Class: Demolisher<br><br>
+                            Riskbreaker<br>If hit by a mine, you lose a turn
                         </div>
                     </div>
                 </div>
