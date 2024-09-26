@@ -5,9 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BATTLESHIPS | BATTLE TO VICTORY</title>
-    <link rel="icon" href="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/BATTLESHIPS-removebg-preview.png?raw=true" type="image">
+    <link rel="icon"
+        href="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/BATTLESHIPS-removebg-preview.png?raw=true"
+        type="image">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
@@ -15,8 +19,8 @@
         /* Override UGG site */
         html {
             background-color: #000000;
-            padding-left: 5px;
             overflow-x: hidden;
+            width: 100%;
         }
 
         #main {
@@ -394,9 +398,10 @@
         /*powerups*/
         .powerups {
             position: relative;
-            padding: 20px;
+            padding: 10px;
             background-color: #000000;
             height: 100vh;
+            overflow: hidden;
 
             .items {
                 display: flex;
@@ -409,8 +414,8 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 200px;
-                height: 300px;
+                width: 300px;
+                height: 400px;
                 border-radius: 10px;
                 overflow: hidden;
                 transition: all 300ms ease-in-out;
@@ -525,23 +530,31 @@
             /* Responsive Styles */
             @media (max-width: 768px) {
                 .powerups .items .item {
-                    width: 200px; /* Increase width */
-                    height: 300px; /* Increase height */
+                    width: 200px;
+                    /* Increase width */
+                    height: 300px;
+                    /* Increase height */
+                 }
+                 .item.prev , .item.next{
+                    width: 100px;
                 }
-            
+
                 .powerups .items .item.active {
-                    display: block; /* Show only the active item */
+                    display: block;
+                    /* Show only the active item */
                 }
-            
+
                 .powerups .item img {
-                    width: 150px; /* Adjust image width */
-                    height: 150px; /* Adjust image height */
+                    width: 150px;
+                    /* Adjust image width */
+                    height: 150px;
+                    /* Adjust image height */
                 }
-            
+
                 .button-container .button {
                     font-size: 24px;
                 }
-            
+
                 .button-container .button:before {
                     width: 40px;
                 }
@@ -553,6 +566,9 @@
                     height: 200px;
                     display: flex;
                     flex-direction: column;
+                }
+                .item.prev, .item.next{
+                    width: 80px;
                 }
 
                 .item img {
@@ -580,23 +596,27 @@
             }
         }
 
-        .headtitle{
+        .headtitle {
             align-items: center;
             justify-content: center;
             align-content: center;
             justify-items: center;
             height: 100vh;
+
             .scroll-down {
                 position: absolute;
-                bottom: 20px; /* Adjust as needed */
+                bottom: 20px;
+                /* Adjust as needed */
                 left: 50%;
                 transform: translateX(-50%);
                 text-align: center;
-                color: #fff; /* Adjust text color as needed */
+                color: #fff;
+                /* Adjust text color as needed */
             }
-            
+
             i {
-                width: 30px; /* Adjust icon size as needed */
+                width: 30px;
+                /* Adjust icon size as needed */
                 height: auto;
                 display: block;
                 margin: 10px auto 0;
@@ -605,74 +625,454 @@
 
 
         /*Ships*/
-        .ships{
-            padding: 20px;
-            color: white;
+        .ships {
+            background: #212121;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000000;
-            .marquee-container {
-                overflow: hidden;
-                width: 100%;
-            }
-            
-            .marquee {
-                display: flex;
-                animation: none;
-            }
-            
-            .card {
-                flex: 0 0 auto;
-                width: 20%;
-                position: relative;
-                background-color: #000000;
-            }
-            
-            .card img {
-                width: 100%;
-                height: auto;
-            }
-            
-                        /* Remove the extra closing brace at the beginning */
-            .text-overlay {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                color: white;
+            /* Dark background color */
+            font-family: Tahoma;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding: 20px;
+            color: #fff;
+
+            /* Light text color */
+            .d-block,
+            h2 {
+                color: #ddd;
+                /* Lighter text color for headings */
+                font-weight: 700;
+                font-size: 2.5rem;
+                display: block;
+                margin: 0 auto;
                 text-align: center;
-                padding: 10px;
+                padding-bottom: 20px;
+            }
+
+            /* Flexbox Container */
+            #flex-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                justify-items: center;
+                width: 95%;
+                min-height: 100vh;
+                height: 100vh;
+                margin: auto;
+                background-color: #333;
+                /* Darker background for container */
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.4);
+                overflow: hidden;
+                flex-direction: column;
+                /* Change to column for smaller screens */
+                position: relative;
+            }
+
+            /* Left Zone Styles */
+            #left-zone {
+                height: 50%;
+                flex: 0 0 auto;
+                display: flex;
+            }
+
+            #left-zone .list {
+                display: flex;
+                list-style: none;
+                align-content: stretch;
+                flex-direction: column;
+                flex: 1 1 auto;
+                margin: auto;
+                padding: 0;
                 box-sizing: border-box;
             }
-            
-            @keyframes marquee {
-                0% { transform: translateX(100%); }
-                100% { transform: translateX(-100%); }
+
+            .titem input {
+                display: none;
             }
-            
-            /* Media query for screens with a maximum width of 768px */
-            @media (max-width: 768px) {
-                .marquee {
-                    flex-direction: column;
-                    animation: none; /* Disable animation for smaller screens */
+
+            /* Label Styles */
+            label {
+                display: block;
+                opacity: 0.7;
+                /* Adjust opacity for better visibility */
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                position: relative;
+                color: #aaa;
+                /* Lighter text color for labels */
+            }
+
+            label:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+
+            /* Content Styles */
+            .content-test {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                transform: translateY(100%);
+                height: 50%;
+                width: 100%;
+                transition: 0.5s ease-out;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                pointer-events: none;
+                background-color: #282828;
+                /* Darker background for content */
+            }
+
+            .content-test p {
+                max-width: 50%;
+                text-align: center;
+                color: #ddd;
+                /* Lighter text color for content */
+            }
+
+            /* Right Zone Styles */
+            #right-zone {
+                width: 100%;
+                flex: 1 0 auto;
+                height: 50%;
+            }
+
+            /* Checked State Styles */
+            input:checked~.content-test {
+                transform: translateY(0%);
+                transition: transform 1s;
+                opacity: 1;
+            }
+
+            /* Media Queries */
+            @media (min-width: 480px) {
+                #flex-container {
+                    flex-direction: row;
+                    /* Change to row for larger screens */
+                    min-height: auto;
+                    height: 400px;
+                    position: relative;
                 }
-            
-                .card {
-                    width: 100%;
-                    margin-bottom: 10px; /* Add some space between cards */
+
+                #left-zone .list {
+                    border-right: 2px solid #555;
+                    /* Darker border color */
                 }
-            
-                .text-overlay {
-                    font-size: 14px; /* Adjust font size for smaller screens */
-                    padding: 5px; /* Adjust padding for smaller screens */
+
+                .content-test {
+                    width: 65%;
+                    height: 100%;
+                    pointer-events: auto;
+                    transform: translateY(-100%);
+                }
+
+                #left-zone {
+                    width: 35%;
+                }
+
+                #right-zone {
+                    height: 100%;
+                    width: 65%;
                 }
             }
+
+            @media (max-width: 480px) {
+                .content_testimonial-1 .picto {
+                    padding-top: 100px;
+                }
+
+                .content_testimonial-2 .picto {
+                    padding-top: 100px;
+                }
+
+                .content_testimonial-3 .picto {
+                    padding-top: 100px;
+                }
+
+                .content_testimonial-4 .picto {
+                    padding-top: 100px;
+                }
+
+                .item>label {
+                    font-size: 1.3rem;
+                }
+            }
+
+            /* Testimonial Picto Styles */
+            .content_testimonial-1 .picto {
+                height: 100%;
+                width: 100%;
+                background-image: url("/IMAGES/aircraftcarrieri-removebg-preview.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .content_testimonial-1 h1 {
+                color: #d64541;
+                text-align: center;
+            }
+
+            .content_testimonial-2 .picto {
+                height: 100%;
+                width: 100%;
+                background-image: url("/IMAGES/battleshipi-removebg-preview.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .content_testimonial-2 h1 {
+                color: #f5d76e;
+            }
+
+            .content_testimonial-3 .picto {
+                height: 100%;
+                width: 100%;
+                background-image: url("/IMAGES/cruiseri-removebg-preview.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .content_testimonial-3 h1 {
+                color: #00b16a;
+            }
+
+            .content_testimonial-4 .picto {
+                height: 100%;
+                width: 100%;
+                background-image: url("/IMAGES/submarinei-removebg-preview.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .content_testimonial-4 h1 {
+                color: #f27935;
+            }
+
+            .content_testimonial-5 .picto {
+                height: 100%;
+                width: 100%;
+                background-image: url("/IMAGES/destroyeri-removebg-preview.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .content_testimonial-5 h1 {
+                color: #354bf2;
+            }
+
+            .content-test h1:first-letter {
+                text-transform: uppercase;
+            }
+
+            input:checked~label {
+                opacity: 1;
+                animation: all 1s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            }
+
+            input:checked~label.label_testimonial-1 {
+                color: #d64541;
+                border-right: solid 4px #d64541;
+            }
+
+            input:checked~label.label_testimonial-2 {
+                color: #f5d76e;
+                border-right: solid 4px #f5d76e;
+            }
+
+            input:checked~label.label_testimonial-3 {
+                color: #00b16a;
+                border-right: solid 4px #00b16a;
+            }
+
+            input:checked~label.label_testimonial-4 {
+                color: #f27935;
+                border-right: solid 4px #f27935;
+            }
+
+            input:checked~label.label_testimonial-5 {
+                color: #354bf2;
+                border-right: solid 4px #354bf2;
+            }
+
+            label.label_testimonial-1:before {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                background-position: left;
+                background-size: 75% 75%;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+
+            label.label_testimonial-2:before {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                background-position: center;
+                background-size: 75% 75%;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+            }
+
+            label.label_testimonial-3:before {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                background-position: center;
+                background-size: 75% 75%;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+
+            label.label_testimonial-4:before {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                background-position: center;
+                background-size: 75% 75%;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+
+            label.label_testimonial-5:before {
+                content: " ";
+                display: block;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                margin-left: 15px;
+                background-position: center;
+                background-size: 75% 75%;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+            }
+
+            label:first-letter {
+                text-transform: uppercase;
+            }
+
+            .label_testimonial-1:hover {
+                color: black;
+                background-image: -webkit-gradient(linear,
+                        left top,
+                        right top,
+                        from(#ffffff),
+                        to(#d64541a3));
+                background-image: -webkit-linear-gradient(left, #ffffff00, #d64541a3);
+                background-image: -o-linear-gradient(left, #ffffff00, #d64541a3);
+                background-image: linear-gradient(to right, #ffffff00, #d64541a3);
+                font-size: 1.2rem;
+                -webkit-transition: font-size 0.5s;
+                -o-transition: font-size 0.5s;
+                transition: font-size 0.5s;
+            }
+
+            .label_testimonial-2:hover {
+                color: black;
+                background-image: -webkit-gradient(linear,
+                        left top,
+                        right top,
+                        from(#ffffff),
+                        to(#f5d76e59));
+                background-image: -webkit-linear-gradient(left, #ffffff00, #f5d76e59);
+                background-image: -o-linear-gradient(left, #ffffff00, #f5d76e59);
+                background-image: linear-gradient(to right, #ffffff00, #f5d76e59);
+                font-size: 1.2rem;
+                -webkit-transition: font-size 0.5s;
+                -o-transition: font-size 0.5s;
+                transition: font-size 0.5s;
+            }
+
+            .label_testimonial-3:hover {
+                color: black;
+                background-image: -webkit-gradient(linear,
+                        left top,
+                        right top,
+                        from(#ffffff),
+                        to(#00b16aa3));
+                background-image: -webkit-linear-gradient(left, #ffffff00, #00b16aa3);
+                background-image: -o-linear-gradient(left, #ffffff00, #00b16aa3);
+                background-image: linear-gradient(to right, #ffffff00, #00b16aa3);
+                font-size: 1.2rem;
+                -webkit-transition: font-size 0.5s;
+                -o-transition: font-size 0.5s;
+                transition: font-size 0.5s;
+            }
+
+            .label_testimonial-4:hover {
+                color: black;
+                background-image: -webkit-gradient(linear,
+                        left top,
+                        right top,
+                        from(#ffffff),
+                        to(#f27935a3));
+                background-image: -webkit-linear-gradient(left, #ffffff00, #f27935a3);
+                background-image: -o-linear-gradient(left, #ffffff00, #f27935a3);
+                background-image: linear-gradient(to right, #ffffff00, #f27935a3);
+                font-size: 1.2rem;
+                -webkit-transition: font-size 0.5s;
+                -o-transition: font-size 0.5s;
+                transition: font-size 0.5s;
+            }
+
+            .label_testimonial-5:hover {
+                color: black;
+                background-image: -webkit-gradient(linear,
+                        left top,
+                        right top,
+                        from(#ffffff),
+                        to(#4955ac));
+                background-image: -webkit-linear-gradient(left, #ffffff00, #4955ac);
+                background-image: -o-linear-gradient(left, #ffffff00, #4955ac);
+                background-image: linear-gradient(to right, #ffffff00, #4955ac);
+                font-size: 1.2rem;
+                -webkit-transition: font-size 0.5s;
+                -o-transition: font-size 0.5s;
+                transition: font-size 0.5s;
+            }
+
+            p.testimonialState {
+                margin-top: -5px;
+                font-size: 0.8rem;
+                font-style: italic;
+                color: #808080d4;
+            }
+
+            p.testimonialFrom {
+                margin-top: 5px;
+                font-weight: bold;
+                font-size: 20px !important;
+                color: #7797ba;
+            }
+
+            /* ============== End Testimonial Flexbox ============= */
         }
-        
-        
+
+
 
         /*Register*/
         .register {
@@ -682,6 +1082,7 @@
             justify-content: center;
             align-items: center;
             align-content: center;
+
             a {
                 color: limegreen;
                 z-index: 1;
@@ -1102,29 +1503,60 @@
         </section>
 
         <section class="ships">
-            <div class="marquee-container">
-                <div class="marquee">
-                    <div class="card">
-                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/aircraftcarrieri-removebg-preview.png?raw=true" alt="Service 1">
-                        <div class="text-overlay">AirCraft Carrier (1x5)</div>
-                    </div>
-                    <div class="card">
-                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/battleshipi-removebg-preview.png?raw=true" alt="Service 2">
-                        <div class="text-overlay">BattleShip (1x4)</div>
-                    </div>
-                    <div class="card">
-                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/cruiseri-removebg-preview.png?raw=true" alt="Service 3">
-                        <div class="text-overlay">Cruiser (1x3)</div>
-                    </div>
-                    <div class="card">
-                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/submarinei-removebg-preview.png?raw=true" alt="Service 4">
-                        <div class="text-overlay">Submarine (1x3)</div>
-                    </div>
-                    <div class="card">
-                        <img src="https://github.com/ieee-sfit/ieee-event-catalog/blob/main/IMAGES/destroyeri-removebg-preview.png?raw=true" alt="Service 5">
-                        <div class="text-overlay">Destroyer (1x2)</div>
-                    </div>
+            <div id="flex-container" class="testimonials" style="height: 98vh;">
+                <div id="left-zone">
+                    <ul class="list">
+                        <li class="titem">
+                            <input type="radio" id="radio_testimonial-1" name="basic_carousel" checked="checked" />
+                            <label class="label_testimonial-1" for="radio_testimonial-1">AirCraft Carrier</label>
+                            <div class="content-test content_testimonial-1">
+                                <span class="picto"></span>
+                                <h1>AirCraft Carrier</h1>
+                                <p class="testimonialFrom">Size: 1x5</p>
+                            </div>
+                        </li>
+                        <li class="titem">
+                            <input type="radio" id="radio_testimonial-2" name="basic_carousel" />
+                            <label class="label_testimonial-2" for="radio_testimonial-2">BattleShip</label>
+                            <div class="content-test content_testimonial-2">
+                                <span class="picto"></span>
+                                <h1>BattleShip</h1>
+                                <p class="testimonialFrom">Size: 1x4</p>
+                                <br>
+                            </div>
+                        </li>
+                        <li class="titem">
+                            <input type="radio" id="radio_testimonial-3" name="basic_carousel" />
+                            <label class="label_testimonial-3" for="radio_testimonial-3">Cruiser</label>
+                            <div class="content-test content_testimonial-3">
+                                <span class="picto"></span>
+                                <h1>Cruiser</h1>
+                                <p class="testimonialFrom">Size: 1x3</p>
+                            </div>
+                        </li>
+                        <li class="titem">
+                            <input type="radio" id="radio_testimonial-4" name="basic_carousel" />
+                            <label class="label_testimonial-4" for="radio_testimonial-4">Submarine</label>
+                            <div class="content-test content_testimonial-4">
+                                <span class="picto"></span>
+                                <h1>Submarine</h1>
+                                <p class="testimonialFrom">Size: 1x3</p>
+                                <br>
+                            </div>
+                        </li>
+                        <li class="titem">
+                            <input type="radio" id="radio_testimonial-5" name="basic_carousel" />
+                            <label class="label_testimonial-5" for="radio_testimonial-5">Destroyer</label>
+                            <div class="content-test content_testimonial-5">
+                                <span class="picto"></span>
+                                <h1>Destroyer</h1>
+                                <p class="testimonialFrom">Size: 1x2</p>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+                <div id="right-zone"></div>
             </div>
         </section>
 
@@ -1135,7 +1567,9 @@
             </div>
         </section>
         <section style="background-color: #000000;" class="register">
-            <a><h2>Register NOW!</h2></a>
+            <a>
+                <h2>Register NOW!</h2>
+            </a>
         </section>
 
     </div>
@@ -1203,6 +1637,44 @@
 
             updateSlides();
         });
+
+
+        /*Ships*/
+        var testimonialItems = document.querySelectorAll(".item label");
+        var timer;
+        function cycleTestimonials(index) {
+            timer = setTimeout(function () {
+                var evt;
+                if (document.createEvent) {
+                    //If browser = IE, then polyfill
+                    evt = document.createEvent('MouseEvent');
+                    evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                } else {
+                    //If Browser = modern, then create new MouseEvent
+                    evt = new MouseEvent("click", {
+                        view: window,
+                        bubbles: true,
+                        cancelable: true,
+                        clientX: 20
+                    });
+                }
+                var ele = "." + testimonialItems[index].className;
+                var ele2 = document.querySelector(ele)
+                ele2.dispatchEvent(evt);
+                index++; // Increment the index
+                if (index >= testimonialItems.length) {
+                    index = 0; // Set it back to `0` when it reaches `3`
+                }
+                cycleTestimonials(index); // recursively call `cycleTestimonials()`
+                document.querySelector(".testimonials").addEventListener("click", function () {
+                    clearTimeout(timer); //stop the carousel when someone clicks on the div
+                });
+            }, 2000); //adjust scroll speed in miliseconds
+        }
+        //run the function
+        cycleTestimonials(0);
+
+
     </script>
 </body>
 
