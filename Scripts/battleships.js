@@ -73,6 +73,35 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             this.initializeGame();
+
+            // Add class button event listeners
+            document.querySelectorAll('.class-btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove selected class from all buttons
+                    document.querySelectorAll('.class-btn').forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked button
+                    button.classList.add('selected');
+                    
+                    // Set the selected class
+                    this.selectedClass = button.dataset.class;
+                    
+                    // Reset ability usage for new class
+                    this.usedAbilities = {
+                        attacker: { nuke: false, annihilate: false },
+                        defender: { counter: false, jam: false },
+                        supporter: { hacker: false, moreHelp: false, scanner: false }
+                    };
+                    
+                    // Update ability buttons
+                    this.renderAbilityButtons();
+                    
+                    // Show notification
+                    showNotification(`Selected ${this.selectedClass} class`);
+                });
+            });
         }
 
         initializeGame() {
@@ -517,6 +546,11 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!gameGrid) return;
             
             gameGrid.addEventListener('click', (e) => {
+                if (!this.selectedClass) {
+                    showNotification('Please select a character class first!');
+                    return;
+                }
+                
                 if (e.target.classList.contains('game-cell') && 
                     !e.target.classList.contains('nuke-target') && 
                     !e.target.classList.contains('scanner-target')) {
@@ -526,7 +560,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const resetButton = document.getElementById('resetGame');
             if (resetButton) {
-                resetButton.addEventListener('click', () => this.resetGame());
+                resetButton.addEventListener('click', () => {
+                    this.selectedClass = null;
+                    document.querySelectorAll('.class-btn').forEach(btn => {
+                        btn.classList.remove('selected');
+                    });
+                    this.resetGame();
+                });
             }
         }
 
