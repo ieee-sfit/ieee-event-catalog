@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Timer animation
-    let countdown = 300; // 5 minutes in seconds
+    let countdown = 480; // 8 minutes in seconds
     const timerText = document.querySelector('.timer-text');
     const timer = document.querySelector('.timer');
     
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const seconds = countdown % 60;
         timerText.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
-        const progress = (300 - countdown) / 300 * 100;
+        const progress = (480 - countdown) / 480 * 100;
         timer.style.background = `conic-gradient(var(--secondary) ${progress}%, transparent ${progress}%)`;
         
         if (countdown > 0) {
@@ -71,6 +71,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
             };
+            this.counterActive = false;
+            this.jamActive = false;
+            this.annihilateActive = false;
             
             this.initializeGame();
 
@@ -172,10 +175,16 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Add event listeners
             document.querySelectorAll('.ability-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    this.useAbility(btn.dataset.ability);
-                    btn.disabled = true;
-                });
+                if (!btn.disabled) {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const ability = btn.dataset.ability;
+                        if (ability) {
+                            this.useAbility(ability);
+                            showNotification(`Using ${ability} ability!`);
+                        }
+                    });
+                }
             });
         }
         
@@ -442,6 +451,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const cell = document.querySelector(`.game-cell[data-index="${index}"]`);
             if (!cell || cell.classList.contains('revealed')) return;
 
+            if (!this.selectedClass) {
+                showNotification('Please select a character class first!');
+                return;
+            }
+
             this.shots++;
             cell.classList.add('revealed');
 
@@ -686,8 +700,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const shipsRemaining = document.getElementById('shipsRemaining');
             
             if (hitCount) hitCount.textContent = this.hits;
-            if (shotCount) hitCount.textContent = this.shots;
-            if (shipsRemaining) shipsRemaining.textContent = Math.ceil(this.shipLocations.size / 2);
+            if (shotCount) shotCount.textContent = this.shots; // Fix: was using hitCount instead of shotCount
+            if (shipsRemaining) shipsRemaining.textContent = this.shipsRemaining;
         }
     }
 
