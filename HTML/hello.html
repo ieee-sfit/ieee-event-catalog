@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fortnite-Like Character Display</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #222;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    #character-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .character-card {
+      background-color: #333;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      width: 250px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .character-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .character-card h2 {
+      margin-top: 0;
+      color: #ddd;
+      font-size: 1.5em;
+    }
+
+    .character-card p {
+      margin-bottom: 10px;
+      font-size: 0.9em;
+      line-height: 1.4;
+    }
+
+    .ability-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ability-list li {
+      margin-bottom: 5px;
+      font-size: 0.95em;
+      color: #90ff3b;
+      position: relative;
+      padding-left: 1.2em;
+      text-align: left;
+    }
+
+    .ability-list li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      color: #90ff3b;
+    }
+
+    .ability-description {
+      color: #999;
+      font-size: 0.85em;
+      margin-top: 5px;
+      text-align: left;
+      padding-left: 1.2em;
+    }
+
+    .character-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #555;
+    }
+  </style>
+</head>
+<body>
+
+<div id="character-container">
+
+  <div class="character-card">
+    <img src="E:\VSCODE\ieee-event-catalog\IMAGES\freepik__the-style-is-3d-model-with-octane-render-volumetri__65922.jpeg" alt="Attacker" class="character-image">
+    <h2>Attacker</h2>
+    <p><b>Characteristic:</b> Fierce warrior excelling in direct combat, known for brute strength and ease in taking down enemies.</p>
+      <ul class="ability-list">
+      <li>Nuke</li>
+      <p class="ability-description">Launches a powerful explosive that deals massive damage to enemies in a large area.</p>
+      <li>Annihilate</li>
+      <p class="ability-description">Unleashes a devastating attack that destroys all enemies in a straight line.</p>
+    </ul>
+  </div>
+
+  <div class="character-card">
+    <img src="E:\VSCODE\ieee-event-catalog\IMAGES\freepik__the-style-is-3d-model-with-octane-render-volumetri__65923.jpeg" alt="Defender" class="character-image">
+    <h2>Defender</h2>
+    <p><b>Characteristic:</b> Strategic player excelling in protecting the team and disrupting enemy plans. Known for quick thinking and adaptability.</p>
+      <ul class="ability-list">
+      <li>Counter</li>
+      <p class="ability-description">Sets up a defensive barrier that blocks incoming attacks and deals damage to enemies that come into contact with it.</p>
+      <li>Jam</li>
+      <p class="ability-description">Disrupts enemy communication and prevents them from using their abilities for a short period.</p>
+    </ul>
+  </div>
+
+  <div class="character-card">
+    <img src="E:\VSCODE\ieee-event-catalog\IMAGES\freepik__the-style-is-3d-model-with-octane-render-volumetri__65924.jpeg" alt="Supporter" class="character-image">
+    <h2>Supporter</h2>
+    <p><b>Characteristic:</b> Versatile player excelling in providing assistance to the team. Known for creative problem-solving and adaptability.</p>
+      <ul class="ability-list">
+      <li>Hacker</li>
+      <p class="ability-description">Hacks into enemy systems and disables their abilities for a short period.</p>
+      <li>More Help</li>
+      <p class="ability-description">Calls in reinforcements to assist the team in battle.</p>
+      <li>Scanner</li>
+      <p class="ability-description">Scans the battlefield and provides valuable information to the team.</p>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll('.character-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transition = "transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out";
+      this.style.boxShadow = "0 6px 12px rgba(0, 0, 0, 0.7)";
+    });
+
+    card.addEventListener('mouseleave', function() {
+      this.style.transition = "transform 0.3s ease, box-shadow 0.3s ease";
+      this.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.5)";
+    });
+  });
+</script>
+
+</body>
+</html>

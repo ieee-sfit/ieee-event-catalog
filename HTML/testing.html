@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Themed Page with Sidebar</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #161b22;
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            color: #f0f6fc;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background-color: #161b22;
+            padding: 1rem;
+            width: 200px;
+        }
+        .sidebar h2 {
+            color: #f0f6fc;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 0.5rem 0;
+        }
+        .sidebar ul li a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 2rem;
+            flex: 1;
+        }
+        footer {
+            background-color: #161b22;
+            padding: 1rem;
+            text-align: center;
+            color: #8b949e;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GitHub Themed Page with Sidebar</h1>
+    </header>
+    <div class="content">
+        <aside class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </aside>
+        <main>
+            <div class="container">
+                <h2>Welcome to the GitHub Themed Page</h2>
+                <p>This is a simple page designed to mimic the GitHub theme with a sidebar for navigation.</p>
+                <p>Explore the links in the sidebar to navigate through the site.</p>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2023 GitHub Themed Page</p>
+    </footer>
+</body>
+</html>
