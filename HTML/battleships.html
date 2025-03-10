@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship: Assault Protocol - MOSAIC</title>
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="" rel="stylesheet">
+</head>
+<body class="bg-[var(--primary)] text-[var(--text)] overflow-x-hidden leading-relaxed text-base sm:text-lg md:text-xl">
+    <div class="parallax-container">
+        <div class="grid-overlay"></div>
+        <div class="parallax-layer parallax-layer-back"></div>
+        <div class="parallax-layer parallax-layer-base">
+            <div class="content">
+                <div class="max-w-[360px] mx-auto sm:max-w-none">
+                    <header class="h-screen flex flex-col justify-center items-center text-center">
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase text-[var(--secondary)] mb-2">Battleship</h1>
+                        <p class="text-2xl mb-4 text-[var(--accent)]">ASSAULT PROTOCOL</p>
+                        <p class="text-xl mb-6">An IEEE/WIE special event for MOSAIC Technical Fest</p>
+                        <div>
+                            <a href="#overview"
+                               class="inline-block bg-transparent border border-[var(--secondary)] text-[var(--secondary)] px-6 py-2 m-2 font-sans text-sm uppercase tracking-wider hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-all">
+                               Learn More
+                            </a>
+                            <a href="#rules"
+                               class="inline-block bg-transparent border border-[var(--secondary)] text-[var(--secondary)] px-6 py-2 m-2 font-sans text-sm uppercase tracking-wider hover:bg-[var(--secondary)] hover:text-[var(--primary)] transition-all">
+                               How to Play
+                            </a>
+                        </div>
+                    </header>
+                    
+                    <section id="overview" class="overview">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">Event Overview</h2>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Welcome to <span class="highlight">Battleship: Assault Protocol</span>, a strategy event where teams compete against each other in an enhanced version of the classic Battleship game.</p>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Players take turns guessing the locations of each other's hidden ships on an 8x8 grid. Each team must complete technical challenges to unlock special powerups that can turn the tide of battle!</p>
+                        
+                        
+                        <div class="cta">
+                            <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">The first team to sink all opponent ships wins the round!</p>
+                            <a href="#signup" class="btn">Register Now</a>
+                        </div>
+                    </section>
+                    
+                    <section id="rules">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">Rules & How to Play</h2>
+                        <div class="rules-container">
+                            <div class="rules-card floating">
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Game Setup</h3>
+                                <ul class="rules-list">
+                                    <li>Teams consist of 3 members each</li>
+                                    <li>Each team secretly places their fleet on an 8x8 grid</li>
+                                    <li>Ships cannot overlap or extend beyond the grid</li>
+                                    <li>Ships can be placed horizontally or vertically</li>
+                                    <li>Once placed, ships cannot be moved</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="rules-card floating" style="animation-delay: 0.5s">
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Gameplay</h3>
+                                <ul class="rules-list">
+                                    <li>Teams take turns calling out coordinates</li>
+                                    <li>Coordinates are called as letter-number pairs (e.g., C5)</li>
+                                    <li>The opposing team announces "hit" or "miss"</li>
+                                    <li>When all squares of a ship are hit, it is "sunk"</li>
+                                    <li>No changing or moving ships during gameplay</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="rules-card floating" style="animation-delay: 1s">
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Technical Challenges</h3>
+                                <ul class="rules-list">
+                                    <li>Teams must solve technical puzzles during play</li>
+                                    <li>Successful completion unlocks powerups</li>
+                                    <li>Challenges include coding, problem-solving, and electronics</li>
+                                    <li>Time limits apply to each challenge</li>
+                                    <li>Strategy is key - choose challenges wisely!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="characters" class="overview">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">Character Classes</h2>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Choose your strategic advantage with one of these specialized character classes:</p>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Complete technical challenges to unlock these game-changing abilities:</p>
+                        
+                        <div class="character-container">
+                            <div class="character-card">
+                                <div class="character-image attacker-image">
+                                    <i class="fas fa-meteor"></i>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Attacker</h3>
+                                <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4"><b>Characteristic:</b> Fierce warrior excelling in direct combat, known for brute strength and ease in taking down enemies.</p>
+                                <ul class="ability-list">
+                                    <li><i class="fa-solid fa-radiation"></i> Nuke
+                                        <p class="ability-description">Creates an X-shaped attack pattern in a 3×3 grid centered on your target.</p>
+                                    </li>
+                                    <li><i class="fa-solid fa-skull"></i> Annihilate
+                                        <p class="ability-description">After a successful hit, destroy two more adjacent grid spaces automatically.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="character-card">
+                                <div class="character-image defender-image">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Defender</h3>
+                                <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4"><b>Characteristic:</b> Strategic player excelling in protecting the team and disrupting enemy plans. Known for quick thinking and adaptability.</p>
+                                <ul class="ability-list">
+                                    <li><i class="fa-solid fa-rotate"></i> Counter
+                                        <p class="ability-description">When your ship is hit, automatically strike back at the opponent's grid.</p>
+                                    </li>
+                                    <li><i class="fa-solid fa-shield"></i> Jam
+                                        <p class="ability-description">Prevent one incoming attack, keeping your ship safe from damage.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="character-card">
+                                <div class="character-image supporter-image">
+                                    <i class="fas fa-satellite-dish"></i>
+                                </div>
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Supporter</h3>
+                                <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4"><b>Characteristic:</b> Versatile player excelling in providing assistance to the team. Known for creative problem-solving and adaptability.</p>
+                                <ul class="ability-list">
+                                    <li><i class="fa-solid fa-laptop-code"></i> Hacker
+                                        <p class="ability-description">Reveal the location of one segment of an enemy ship.</p>
+                                    </li>
+                                    <li><i class="fa-solid fa-ship"></i> More Help
+                                        <p class="ability-description">Deploy an additional ship to your fleet, increasing your firepower.</p>
+                                    </li>
+                                    <li><i class="fa-solid fa-magnifying-glass-location"></i> Scanner
+                                        <p class="ability-description">Scan a 4×4 area of the grid to detect ship presence.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    
+                    <section id="timing">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">Time-Based Event</h2>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Battleship: Assault Protocol is a timed competition. Teams must balance strategy with speed.</p>
+                        
+                        <div class="timer">
+                            <div class="timer-text">05:00</div>
+                        </div>
+                        
+                        <div class="rules-container">
+                            <div class="rules-card">
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Time Rules</h3>
+                                <ul class="rules-list">
+                                    <li>Each round has a 5-minute time limit</li>
+                                    <li>Teams have 30 seconds to make each move</li>
+                                    <li>Technical challenges have their own time limits</li>
+                                    <li>Failing to move in time results in a forfeit turn</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="rules-card">
+                                <h3 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-3">Winner Selection</h3>
+                                <ul class="rules-list">
+                                    <li>The team that sinks all enemy ships first wins</li>
+                                    <li>If time expires, the team with most ships sunk wins</li>
+                                    <li>Ties are broken by total hits landed</li>
+                                    <li>The team with the highest score advances</li>
+                                    <li>Grand prize awarded to overall tournament winner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="play" class="overview">
+                        <h2 class="text-2xl md:text-3xl text-center mb-4">Try a Quick Game!</h2>
+                        <p class="text-center mb-6">Take a shot at finding the hidden ships. Ships are randomly placed on every reload.</p>
+                        
+                        <div class="game-container flex flex-col items-center gap-3 md:gap-5 mt-6 mb-6 w-full max-w-[320px] mx-auto sm:max-w-md md:max-w-lg">
+                            <!-- Game notification -->
+                            <div class="game-notification text-sm sm:text-base md:text-lg lg:text-xl w-full bg-opacity-20 bg-[var(--secondary)] rounded p-2 min-h-10">
+                                <span class="text-xs sm:text-sm md:text-base lg:text-lg"></span>
+                            </div>
+                            
+                            <!-- Game stats -->
+                            <div class="game-stats text-xs sm:text-sm md:text-base lg:text-lg flex flex-wrap justify-center gap-3 md:gap-5 font-mono text-base md:text-lg mb-3">
+                                <p class="px-2 py-1 bg-[rgba(10,25,47,0.7)] rounded">Hits: <span id="hitCount">0</span></p>
+                                <p class="px-2 py-1 bg-[rgba(10,25,47,0.7)] rounded">Shots: <span id="shotCount">0</span></p>
+                                <p class="px-2 py-1 bg-[rgba(10,25,47,0.7)] rounded">Ships: <span id="shipsRemaining">5</span></p>
+                            </div>
+                            
+                            <!-- Class selection -->
+                            <div class="class-selection text-center w-full">
+                                <p class="text-sm mb-2"><i class="fas fa-chess"></i> Select your character class:</p>
+                                <div class="class-buttons flex flex-wrap justify-center gap-2">
+                                    <button class="btn text-xs sm:text-sm md:text-base lg:text-lg py-2 px-4 md:text-base md:py-3 md:px-6 class-btn" data-class="attacker">
+                                        <i class="fas fa-meteor"></i> Attacker
+                                    </button>
+                                    <button class="btn text-xs sm:text-sm md:text-base lg:text-lg py-2 px-4 md:text-base md:py-3 md:px-6 class-btn" data-class="defender">
+                                        <i class="fas fa-shield-alt"></i> Defender
+                                    </button>
+                                    <button class="btn text-xs sm:text-sm md:text-base lg:text-lg py-2 px-4 md:text-base md:py-3 md:px-6 class-btn" data-class="supporter">
+                                        <i class="fas fa-satellite-dish"></i> Supporter
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Game grid - make it responsive with tailwind -->
+                            <div class="game-grid grid grid-cols-8 gap-[2px] md:gap-1 w-full border border-[var(--secondary)] p-1 md:p-2 bg-[rgba(10,25,47,0.5)]">
+                                <!-- Grid cells generated by JavaScript -->
+                            </div>
+                            
+                            <!-- Ability buttons -->
+                            <div class="ability-buttons w-full text-center">
+                                <p class="text-sm mb-1">Class Abilities:</p>
+                                <div class="abilities-row flex flex-wrap justify-center gap-2">
+                                    <!-- Abilities added by JavaScript -->
+                                </div>
+                            </div>
+                            
+                            <!-- Reset button -->
+                            <button id="resetGame" class="btn text-xs sm:text-sm md:text-base lg:text-lg py-2 px-4 md:text-sm md:py-3 md:px-6">New Game</button>
+                        </div>
+                    </section>
+
+                    <section id="signup">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">Join the Battle</h2>
+                        <p class="text-sm sm:text-base md:text-lg lg:text-xl mb-4">Ready to test your strategy and technical skills? Register your team now for Battleship: Assault Protocol at MOSAIC Technical Fest!</p>
+                        
+                        <div class="cta">
+                            <a href="#" class="btn">Register Team</a>
+                            <a href="#" class="btn">Contact Organizers</a>
+                        </div>
+                    </section>
+                    
+                    <footer>
+                        <p>© 2025 IEEE/WIE MOSAIC Technical Fest | Battleship: Assault Protocol</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
