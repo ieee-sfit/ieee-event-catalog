@@ -67,8 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.shipLocations = new Set();
             this.selectedClass = null; // Track selected character class
             
-            // Load saved ability state or initialize new
-            this.usedAbilities = JSON.parse(sessionStorage.getItem('battleshipAbilities')) || {
+            // Fix: Use consistent key name and properly parse the stored state
+            const storedAbilities = sessionStorage.getItem('battleshipAbilities');
+            this.usedAbilities = storedAbilities ? JSON.parse(storedAbilities) : {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
@@ -217,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     break;
             }
             
-            // Save ability state to sessionStorage
+            // Fix: Ensure the state is consistently saved with the correct key
             sessionStorage.setItem('battleshipAbilities', JSON.stringify(this.usedAbilities));
             
             this.renderAbilityButtons();
@@ -336,8 +337,6 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             document.querySelector('.game-grid').addEventListener('click', annihilateHandler, { once: true });
-            this.usedAbilities.attacker.annihilate = true;
-            this.renderAbilityButtons();
         }
         
         useCounterAbility() {
@@ -541,12 +540,14 @@ document.addEventListener('DOMContentLoaded', function() {
             this.shots = 0;
             this.shipsRemaining = this.ships.length;
             
-            // Reset abilities and clear storage
+            // Reset abilities
             this.usedAbilities = {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
             };
+            
+            // Fix: Ensure we remove the correct item from sessionStorage
             sessionStorage.removeItem('battleshipAbilities');
             
             this.annihilateActive = false;
