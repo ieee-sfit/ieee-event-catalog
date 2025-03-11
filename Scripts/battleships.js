@@ -643,12 +643,22 @@ document.addEventListener('DOMContentLoaded', function() {
             if (horizontal && x + size > this.gridSize) return false;
             if (!horizontal && y + size > this.gridSize) return false;
             
-            for (let i = 0; i < size; i++) {
-                const pos = horizontal ? 
-                    x + i + (y * this.gridSize) : 
-                    x + ((y + i) * this.gridSize);
-                
-                if (this.grid[pos] !== null) return false;
+            // Check the ship's space and surrounding area
+            for (let i = -1; i <= size; i++) {
+                for (let j = -1; j <= 1; j++) {
+                    let checkX = horizontal ? x + i : x + j;
+                    let checkY = horizontal ? y + j : y + i;
+                    
+                    // Skip checks outside the grid
+                    if (checkX < 0 || checkX >= this.gridSize || checkY < 0 || checkY >= this.gridSize) {
+                        continue;
+                    }
+                    
+                    const pos = checkX + (checkY * this.gridSize);
+                    if (this.grid[pos] !== null) {
+                        return false;
+                    }
+                }
             }
             return true;
         }
