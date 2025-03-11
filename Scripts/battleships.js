@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         constructor() {
             this.gridSize = 8;
             this.ships = [
-                { size: 4, name: 'Battleship' },
+                { size: 5, name: 'Carrier' },     // Changed from 4 to 5
+                { size: 4, name: 'Battleship' },  // Changed from 3 to 4
                 { size: 3, name: 'Cruiser' },
-                { size: 3, name: 'Submarine' },
                 { size: 2, name: 'Destroyer' },
                 { size: 2, name: 'Patrol' }
             ];
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.shipsRemaining = this.ships.length;
             this.shipLocations = new Set();
             this.selectedClass = null; // Track selected character class
-            this.usedAbilities = {
+            this.usedAbilities = JSON.parse(sessionStorage.getItem('usedAbilities')) || {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
@@ -77,12 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Set the selected class
                     this.selectedClass = button.dataset.class;
                     
-                    // Reset ability usage for new class
-                    this.usedAbilities = {
+                    // Remove this reset since we want to maintain state
+                    /* this.usedAbilities = {
                         attacker: { nuke: false, annihilate: false },
                         defender: { counter: false, jam: false },
                         supporter: { hacker: false, moreHelp: false, scanner: false }
-                    };
+                    }; */
                     
                     // Update ability buttons
                     this.renderAbilityButtons();
@@ -206,6 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.usedAbilities.supporter.scanner = true;
                     break;
             }
+            // Save state after each ability use
+            sessionStorage.setItem('usedAbilities', JSON.stringify(this.usedAbilities));
             this.renderAbilityButtons();
         }
         
@@ -437,11 +439,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const cell = document.querySelector(`.game-cell[data-index="${index}"]`);
             if (!cell || cell.classList.contains('revealed')) return;
 
-            if (!this.selectedClass) {
-                showNotification('Please select a character class first!');
-                return;
-            }
-
             this.shots++;
             cell.classList.add('revealed');
 
@@ -526,6 +523,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.hits = 0;
             this.shots = 0;
             this.shipsRemaining = this.ships.length;
+            // Clear session storage
+            sessionStorage.clear();
             this.usedAbilities = {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
@@ -640,22 +639,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         canPlaceShip(x, y, size, horizontal) {
+            // Check boundaries
             if (horizontal && x + size > this.gridSize) return false;
             if (!horizontal && y + size > this.gridSize) return false;
             
-            // Check the ship's space and surrounding area
+            // Check ship position and surrounding area (including diagonals)
             for (let i = -1; i <= size; i++) {
                 for (let j = -1; j <= 1; j++) {
                     let checkX = horizontal ? x + i : x + j;
                     let checkY = horizontal ? y + j : y + i;
                     
                     // Skip checks outside the grid
-                    if (checkX < 0 || checkX >= this.gridSize || checkY < 0 || checkY >= this.gridSize) {
+                    if (checkX < 0 || checkX >= this.gridSize || 
+                        checkY < 0 || checkY >= this.gridSize) {
                         continue;
                     }
                     
+                    // Check if space is already occupied
                     const pos = checkX + (checkY * this.gridSize);
-                    if (this.grid[pos] !== null) {
+                    if (this.grid[pos] === 'ship') {
                         return false;
                     }
                 }
