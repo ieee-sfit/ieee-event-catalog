@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
         constructor() {
             this.gridSize = 8;
             this.ships = [
-                { size: 4, name: 'Battleship' },
-                { size: 3, name: 'Cruiser' },
+                { size: 5, name: 'Battleship' },
+                { size: 4, name: 'Cruiser' },
                 { size: 3, name: 'Submarine' },
                 { size: 2, name: 'Destroyer' },
                 { size: 2, name: 'Patrol' }
@@ -66,11 +66,14 @@ document.addEventListener('DOMContentLoaded', function() {
             this.shipsRemaining = this.ships.length;
             this.shipLocations = new Set();
             this.selectedClass = null; // Track selected character class
-            this.usedAbilities = {
+            
+            // Load saved ability state or initialize new
+            this.usedAbilities = JSON.parse(sessionStorage.getItem('battleshipAbilities')) || {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
             };
+            
             this.counterActive = false;
             this.jamActive = false;
             this.annihilateActive = false;
@@ -90,13 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // Set the selected class
                     this.selectedClass = button.dataset.class;
-                    
-                    // Reset ability usage for new class
-                    this.usedAbilities = {
-                        attacker: { nuke: false, annihilate: false },
-                        defender: { counter: false, jam: false },
-                        supporter: { hacker: false, moreHelp: false, scanner: false }
-                    };
                     
                     // Update ability buttons
                     this.renderAbilityButtons();
@@ -220,6 +216,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.usedAbilities.supporter.scanner = true;
                     break;
             }
+            
+            // Save ability state to sessionStorage
+            sessionStorage.setItem('battleshipAbilities', JSON.stringify(this.usedAbilities));
+            
             this.renderAbilityButtons();
         }
         
@@ -540,11 +540,15 @@ document.addEventListener('DOMContentLoaded', function() {
             this.hits = 0;
             this.shots = 0;
             this.shipsRemaining = this.ships.length;
+            
+            // Reset abilities and clear storage
             this.usedAbilities = {
                 attacker: { nuke: false, annihilate: false },
                 defender: { counter: false, jam: false },
                 supporter: { hacker: false, moreHelp: false, scanner: false }
             };
+            sessionStorage.removeItem('battleshipAbilities');
+            
             this.annihilateActive = false;
             this.counterActive = false;
             this.jamActive = false;
