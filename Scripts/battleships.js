@@ -805,14 +805,6 @@ function showNotification(message) {
 }
 
 
-window.addEventListener('load', function() {
-    // Hide loader
-    document.getElementById('loader').style.display = 'none';
-    
-    // Initialize parallax effects
-    initParallaxEffects();
-});
-
 // Optimized parallax initialization
 function initParallaxEffects() {
     // Check if device supports parallax (not mobile)
