@@ -926,3 +926,142 @@
                 font-size: 1.5rem;
             }
         }
+
+
+
+         /* Loading animation */
+         .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid var(--secondary);
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            margin-bottom: 1rem;
+            will-change: transform;
+        }
+
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-container p {
+            color: var(--text);
+            font-size: 1.2rem;
+        }
+
+        /* Optimized animations */
+        @keyframes pulse-slow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse-slow 3s ease-in-out infinite;
+            will-change: transform;
+        }
+        
+        /* Improved parallax container */
+        .parallax-container {
+            perspective: 2px;
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective-origin: 50% 50%;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Optimized background layer */
+        .parallax-layer-back {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateZ(-5px) scale(3.5);
+            background: linear-gradient(45deg, var(--dark), var(--primary));
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            z-index: -1;
+            will-change: transform;
+        }
+        
+        .parallax-element {
+            position: absolute;
+            pointer-events: none;
+            transition: transform 0.3s ease-out;
+            will-change: transform;
+        }
+        
+        .parallax-star {
+            background-color: var(--secondary);
+            border-radius: 50%;
+            opacity: 0.3;
+            box-shadow: 0 0 5px var(--secondary);
+        }
+        
+        /* Improved grid overlay */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+            will-change: background-position, background-size;
+        }
+
+        /* Responsive game grid improvements */
+        .game-grid {
+            grid-template-columns: repeat(8, 1fr);
+            aspect-ratio: 1/1;
+            max-width: 100%;
+        }
+
+        .game-cell {
+            aspect-ratio: 1/1;
+            transition: all 0.2s ease;
+        }
+
+        /* Better mobile responsiveness */
+        @media (max-width: 640px) {
+            .game-container {
+                padding: 0.5rem;
+            }
+            
+            .ability-buttons .btn {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Optimize logo for all devices */
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            transform-origin: center;
+            filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
+        }
